@@ -4,17 +4,17 @@
 export const teamMembers = [
   {
     id: 1,
-    name: "MAHAVEER JAIN",
+    name: "MAHAVEER C JAIN",
     image: "/images/team/01 MAHAVEER JAIN.jpg",
     position: "Managing Partner",
-    description: "Fellow member of ICAI & ICWA and Founder Member of JCSS. Specialised in GST, SPAs (Sale and Purchase Agreements), LLPs (Product Distribution Agreements) of global entities, Faculty & Senior Resource member of the ICAI on Indirect Taxes and advises on clarifications on GST matters at various forums.",
+    description: "Fellow member of ICAI and Founder member of JCSS. Specialised in Transaction Advisory, Transfer Pricing Regulations, Cross border tax structuring, Expatriate Tax Planning and Litigation.",
     specializations: [
       "Cross Border Tax Structuring",
       "Transfer Pricing",
       "Litigation",
       "Expatriate Taxation"
     ],
-    academic: ["FCA", "FCMA"],
+    academic: ["FCA"],
     linkedin: "https://linkedin.com/in/mahaveer-jain"
   },
   {
@@ -22,7 +22,7 @@ export const teamMembers = [
     name: "JATIN CHRISTOPHER",
     image: "/images/team/02 JATIN CHRISTOPHER.jpg",
     position: "Partner",
-    description: "Fellow member of ICAI & ICWA and Founder Member of JCSS. Specialised in GST, SPAs (Sale and Purchase Agreements), LLPs (Product Distribution Agreements) of global entities, Faculty & Senior Resource member of the ICAI on Indirect Taxes and advises on clarifications on GST matters at various forums.",
+    description: "Fellow member of ICAI & ICMAI and Founder Member of JCSS. Specialised in GST, SPAs (Sale and Purchase Agreements) and PDAs (Product Distribution Agreements) of global entities. Faculty & Senior Resource member of the ICAI on Indirect Taxes and advised on clarifications on GST matters at various forums.",
     specializations: [
       "Cross Border Tax Structuring",
       "Transfer Pricing",
@@ -37,12 +37,12 @@ export const teamMembers = [
     name: "SRIKANTH BALAKRISHNAN",
     image: "/images/team/03 SRIKANTH BALAKRISHNAN.jpg",
     position: "Senior Manager",
-    description: "Senior member of ICAI & ICWA and Founder Member of JCSS. Specialised in GST, SPAs (Sale and Purchase Agreements), LLPs (Product Distribution Agreements) of global entities.",
+    description: "Fellow member of ICAI and Founder Member of JCSS. Specialised in Indirect Taxation, Cross Border Investments into India across various industries. He is also part of JCSS Singapore & Japan practices.",
     specializations: [
-      "Audit and Assurance",
-      "FEMA",
-      "Companies Act",
-      "Start-up Advisory"
+      "GST",
+      "Customs",
+      "Cross Border Investment",
+      "Litigation"
     ],
     academic: ["FCA"],
     linkedin: "https://linkedin.com/in/srikanth-balakrishnan"
@@ -52,7 +52,7 @@ export const teamMembers = [
     name: "SRIKANTH SRINIVASAN",
     image: "/images/team/04 SRIKANTH SRINIVASAN.jpg",
     position: "Manager",
-    description: "Member of ICAI & ICWA and specialised in Funding Seniors and Sub-Structuring, FEMA Regulations, Internal Audit and SOX compliance. He is also part of JCSS Singapore & Japan practices.",
+    description: "Fellow member of ICAI and Founder Member of JCSS. Specialised in Funding Options, Capital Structure, FEMA Regulations, Internal Audit and SOX compliance. He is also part of JCSS Singapore & Japan practices.",
     specializations: [
       "Audit and Assurance",
       "FEMA",
@@ -70,14 +70,14 @@ export const teamMembers = [
     name: "SRINIVAS P R",
     image: "/images/team/05 SRINIVAS P R.jpg",
     position: "Senior Manager",
-    description: "Experienced professional with expertise in audit and assurance services, specializing in corporate compliance and financial reporting.",
+    description: "Fellow member of ICAI & ICMA. Specialised in Accounting (Indian GAAP), Audit compliance and, ERP systems implementation.",
     specializations: [
       "Audit and Assurance",
-      "Corporate Compliance",
-      "Financial Reporting",
-      "Risk Management"
+      "Companies Act",
+      "Indian GAAP",
+      "ERP Implementation"
     ],
-    academic: ["CA"],
+    academic: ["FCA","CMA"],
     linkedin: "https://linkedin.com/in/srinivas-pr"
   },
   {
@@ -85,14 +85,12 @@ export const teamMembers = [
     name: "SHRINIVAS KULKARNI",
     image: "/images/team/06 SHRINIVAS KULKARNI.jpg",
     position: "Manager",
-    description: "Skilled in tax advisory and compliance with focus on indirect taxation and GST implementation for various business entities.",
+    description: "Law Graduate, Accounting and Auditing Professional. Specialised in Financial Accounting and Enterprise Services & Solutions.",
     specializations: [
-      "Tax Advisory",
-      "GST Compliance",
-      "Indirect Taxation",
-      "Business Advisory"
+      "Regulatory Compliance",
+      "Financial Accounting"
     ],
-    academic: ["CA"],
+    academic: ["LLB"],
     linkedin: "https://linkedin.com/in/shrinivas-kulkarni"
   },
   {
@@ -100,14 +98,13 @@ export const teamMembers = [
     name: "VINUTA U V",
     image: "/images/team/07 VINUTA U V.png",
     position: "Senior Associate",
-    description: "Specializes in corporate law and regulatory compliance with extensive experience in company secretarial services.",
+    description: "Fellow member of ICSI; Board member of JCSS. Specialised in Transaction Advisory and Corporate Secretarial services.",
     specializations: [
-      "Corporate Law",
-      "Regulatory Compliance",
-      "Company Secretarial",
-      "Legal Advisory"
+      "Indian Companies Act",
+      "FEMA Advisory",
+      "Inbound & Outbound Advisory"
     ],
-    academic: ["CS", "LLB"],
+    academic: ["ACS"],
     linkedin: "https://linkedin.com/in/vinuta-uv"
   },
   {
@@ -115,14 +112,14 @@ export const teamMembers = [
     name: "PRASHANTH PRABHU G",
     image: "/images/team/08 PRASHANTH PRABHU G.png",
     position: "Associate Manager",
-    description: "Expert in financial analysis and business consulting with focus on startup advisory and investment planning.",
+    description: "Fellow member of ICAI and, part of Audit & Assurance and Tax Compliance practice of JCSS. Specialised in Group companies's IFRS compliance, ICFR and Internal Audits.",
     specializations: [
-      "Financial Analysis",
-      "Business Consulting",
-      "Startup Advisory",
-      "Investment Planning"
+      "Audit and Assurance",
+      "Companies Act",
+      "IFRS",
+      "ICFR"
     ],
-    academic: ["MBA", "CA"],
+    academic: [ "FCA"],
     linkedin: "https://linkedin.com/in/prashanth-prabhu"
   },
   {
@@ -130,29 +127,26 @@ export const teamMembers = [
     name: "V.S.HARISH",
     image: "/images/team/09 V.S.HARISH.png",
     position: "Senior Associate",
-    description: "Experienced in audit and assurance with specialization in internal audit and risk assessment for various industries.",
+    description: "Fellow member of ICAI and, part of Audit & Assurance and Tax Compliance practice of JCSS. Specialised in Group companies's IFRS compliance, ICFR and Internal Audits.",
     specializations: [
-      "Internal Audit",
-      "Risk Assessment",
-      "Process Improvement",
-      "Compliance Review"
+      "Income Tax",
+      "Auditing",
+      "Business Consulting"
     ],
-    academic: ["CA"],
+    academic: ["FCA"],
     linkedin: "https://linkedin.com/in/vs-harish"
   },
   {
     id: 10,
-    name: "NIRANJAN NK",
+    name: "NIRNAJAN N K",
     image: "/images/team/10 NIRANJAN NK.png",
     position: "Associate",
-    description: "Skilled in tax planning and advisory services with focus on direct taxation and regulatory compliance.",
+    description: "Associate member of ICAI. Specialised in Audit and Assurance. Partner of Audit & Assurance and Advisory division at JCSS",
     specializations: [
-      "Tax Planning",
-      "Direct Taxation",
-      "Regulatory Compliance",
-      "Advisory Services"
+      "Audit and Assurance",
+      "ICFR Implementation and reporting"
     ],
-    academic: ["CA"],
+    academic: ["FCA"],
     linkedin: "https://linkedin.com/in/niranjan-nk"
   },
   {
@@ -172,17 +166,15 @@ export const teamMembers = [
   },
   {
     id: 12,
-    name: "MADHUSOODAN HEGDE",
+    name: "MADHUSOODHAN HEGDE",
     image: "/images/team/12 MADHUSOODAN HEGDE.png",
     position: "Manager",
-    description: "Specializes in financial reporting and accounting standards with focus on IFRS and Indian GAAP compliance.",
+    description: "Fellow member of ICAI. Specialised in Indirect Taxation / GST.",
     specializations: [
-      "Financial Reporting",
-      "IFRS Compliance",
-      "Indian GAAP",
-      "Accounting Standards"
+      "Customs",
+      "GST Litigation"
     ],
-    academic: ["CA"],
+    academic: ["FCA"],
     linkedin: "https://linkedin.com/in/madhusoodan-hegde"
   },
   {
@@ -190,14 +182,13 @@ export const teamMembers = [
     name: "SURESH K G",
     image: "/images/team/13 SURESH K G.png",
     position: "Senior Associate",
-    description: "Experienced professional with expertise in taxation and regulatory compliance, specializing in GST advisory and implementation services.",
+    description: "A pioneer in business between Japan and India for over 30 years. He moved to Japan during his university days and established and managed a joint venture with a large Japanese company. He collaborates with top Japanese companies to support investment and new business development in India. Using his know-how and network for doing business with Japan, he innovated his model of collaboration and contributed greatly to the prosperity of business between Japan and India.",
     specializations: [
-      "GST Advisory",
-      "Tax Compliance",
-      "Regulatory Affairs",
-      "Business Process Optimization"
+      "Technology Venture Strategy",
+      "Market Development",
+      "Intelligence"
     ],
-    academic: ["CA"],
+    academic: ["Ph.D"],
     linkedin: "https://linkedin.com/in/suresh-kg"
   },
   {
@@ -205,14 +196,14 @@ export const teamMembers = [
     name: "LOGANATHAN ANANDAN",
     image: "/images/team/14 LOGANATHAN ANANDAN.png",
     position: "Associate",
-    description: "Skilled professional with focus on audit and assurance services, specializing in statutory audits and internal control systems.",
+    description: "Loganathan comes with about 2 decades of consulting cum industry experience across Southeast Asia, Africa, and USA. Specialized in Risk Advisory, SOX (Sarbanes Oxley), Information Systems / ERP Audits, Singapore & Indonesian compliance solutions. Co-founder of JCSS southeast Asia.",
     specializations: [
-      "Statutory Audit",
-      "Internal Controls",
-      "Financial Analysis",
-      "Compliance Management"
+      "Risk Advisory",
+      "Information Systems & ERP Audit",
+      "SOX",
+      "Singapore & Indonesian Compliance"
     ],
-    academic: ["CA"],
+    academic: ["FIPA (Australia)", "FAIA (UK)"," ACA (India)", "CFE", "CISA & CDPSE", "CRMA", "PTP (Singapore Chartered Tax Professionals)"],
     linkedin: "https://linkedin.com/in/loganathan-anandan"
   },
   {

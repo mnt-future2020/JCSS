@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import CorporateAdvisory from '@/components/services/CorporateAdvisory';
 import AuditAssurance from '@/components/services/AuditAssurance';
@@ -11,7 +11,7 @@ import ContactUs from '@/components/Contact/ContactUs';
 import Header from '@/components/Header/Header';
 import Navigation from '@/components/Header/Navigation';
 
-export default function Services() {
+function ServicesContent() {
   const searchParams = useSearchParams();
   const [activeService, setActiveService] = useState('Advisory');
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -303,5 +303,20 @@ export default function Services() {
       </button>
     </div>
   </div>
+  );
+}
+
+export default function Services() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <p className="text-white text-lg">Loading Services...</p>
+        </div>
+      </div>
+    }>
+      <ServicesContent />
+    </Suspense>
   );
 }

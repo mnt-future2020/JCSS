@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, Suspense } from 'react';
 
 const serviceItems = [
   'Advisory',
@@ -38,7 +38,7 @@ interface NavigationProps {
   onServiceChange?: (service: string) => void;
 }
 
-export default function Navigation({ activeService, onServiceChange }: NavigationProps) {
+function NavigationContent({ activeService, onServiceChange }: NavigationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -209,5 +209,17 @@ export default function Navigation({ activeService, onServiceChange }: Navigatio
         </div>
       </div> */}
     </>
+  );
+}
+
+export default function Navigation(props: NavigationProps) {
+  return (
+    <Suspense fallback={<div className="hidden md:flex fixed right-3 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1">
+      <div className="animate-pulse bg-slate-700/80 py-4 xl:py-6 px-2 xl:px-2.5 text-xs xl:text-sm rounded-r-2xl">
+        <div className="w-16 h-4 bg-slate-600 rounded"></div>
+      </div>
+    </div>}>
+      <NavigationContent {...props} />
+    </Suspense>
   );
 }

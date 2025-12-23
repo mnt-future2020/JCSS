@@ -85,12 +85,12 @@ const Crew: React.FC = () => {
                   </div>
 
                   {/* Back Side - Details Card */}
-                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
+                  <div className="absolute inset-0 w-full h-full backface-hidden font-medium rotate-y-180">
                     <div className="bg-white rounded-3xl p-4 shadow-2xl h-full w-full mx-auto overflow-y-auto">
                       <div className="h-full flex flex-col justify-between">
                         {/* Header with Name and LinkedIn */}
                         <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-gray-900 font-bold text-lg leading-tight flex-1 pr-2">{member.name}</h3>
+                          <h3 className="text-gray-900 font-bold text-base leading-tight flex-1 pr-2">{member.name}</h3>
                           {member.linkedin && (
                             <a
                               href={member.linkedin}
@@ -99,8 +99,8 @@ const Crew: React.FC = () => {
                               className="text-blue-600 hover:text-blue-800 hover:scale-110 transition-all shrink-0"
                               onClick={(e) => e.stopPropagation()}
                             >
-                              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                                <IconBrandLinkedinFilled size={18} className="text-white" />
+                              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
+                                <IconBrandLinkedinFilled size={14} className="text-white" />
                               </div>
                             </a>
                           )}
@@ -121,7 +121,7 @@ const Crew: React.FC = () => {
 
                         {/* Specialisation */}
                         <div className="mb-2 flex-1">
-                          <h4 className="font-bold text-base mb-2 text-gray-900">Specialisation:</h4>
+                          <h4 className="font-bold text-base text-gray-900">Specialisation:</h4>
                           <div className="space-y-1">
                             {member.specializations.map((spec, index) => (
                               <div key={index} className="text-gray-600 text-sm">
@@ -135,14 +135,10 @@ const Crew: React.FC = () => {
                         <div className="border-t border-gray-200 mb-1"></div>
 
                         {/* Academic */}
-                        <div className="mb-2">
-                          <h4 className="font-bold text-base mb-2 text-gray-900">Academic:</h4>
-                          <div className="space-y-1">
-                            {member.academic.map((degree, index) => (
-                              <div key={index} className="text-gray-600 text-xs">
-                                {degree}
-                              </div>
-                            ))}
+                        <div className="mb-6">
+                          <h4 className="font-bold text-base text-gray-900">Academic:</h4>
+                          <div className="text-gray-600 text-xs">
+                            {member.academic.join(', ')}
                           </div>
                         </div>
                       </div>
