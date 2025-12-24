@@ -12,7 +12,7 @@ function ExperienceContent() {
   return (
     <div 
       ref={containerRef}
-      className="min-h-screen bg-[#1d4e77] overflow-y-auto"
+      className="h-screen bg-[#1d4e77] overflow-y-auto"
       onScroll={handleScroll}
     >
       <Navigation />

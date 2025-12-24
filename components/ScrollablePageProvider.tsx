@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode, useRef } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode, useRef, useCallback } from 'react';
 import { useGlobalScroll } from './GlobalScrollProvider';
 
 interface ScrollablePageContextType {
@@ -35,6 +35,7 @@ export default function ScrollablePageProvider({
   const [isAtTop, setIsAtTop] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const lastScrollTimeRef = useRef(0);
   const { handleGlobalScroll, isTransitioning } = useGlobalScroll();
 
   // Check if device is mobile
@@ -48,11 +49,25 @@ export default function ScrollablePageProvider({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Check scroll position helper
+  const checkScrollPosition = useCallback(() => {
+    const container = containerRef.current;
+    if (!container) return { atTop: true, atBottom: false, hasScroll: false };
+
+    const { scrollTop, scrollHeight, clientHeight } = container;
+    const threshold = 10;
+    const hasScroll = scrollHeight > clientHeight + threshold;
+    const atTop = scrollTop <= threshold;
+    const atBottom = scrollTop + clientHeight >= scrollHeight - threshold;
+
+    return { atTop, atBottom, hasScroll };
+  }, []);
+
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     const target = e.target as HTMLDivElement;
     const { scrollTop, scrollHeight, clientHeight } = target;
     
-    const threshold = 10; // 10px threshold for better UX
+    const threshold = 10;
     const atTop = scrollTop <= threshold;
     const atBottom = scrollTop + clientHeight >= scrollHeight - threshold;
     
@@ -70,53 +85,54 @@ export default function ScrollablePageProvider({
 
   // Handle wheel events for this scrollable page
   useEffect(() => {
-    if (isMobile || isTransitioning) return;
-
-    let lastScrollTime = 0;
-    const scrollDelay = 500; // Shorter delay for page content scrolling
+    if (isMobile) return;
 
     const handleWheel = (e: WheelEvent) => {
+      if (isTransitioning) {
+        e.preventDefault();
+        return;
+      }
+
       const container = containerRef.current;
       if (!container) return;
 
-      const { scrollTop, scrollHeight, clientHeight } = container;
-      const threshold = 10;
-      const atTop = scrollTop <= threshold;
-      const atBottom = scrollTop + clientHeight >= scrollHeight - threshold;
-
+      const { atTop, atBottom, hasScroll } = checkScrollPosition();
       const now = Date.now();
-      
+      const navigationDelay = 800;
+
       if (e.deltaY > 0) {
         // Scrolling down
-        if (atBottom) {
-          // At bottom, navigate to next page
-          if (now - lastScrollTime >= 1000) { // Longer delay for page navigation
+        if (!hasScroll || atBottom) {
+          // No scrollable content OR at bottom - navigate to next page
+          if (now - lastScrollTimeRef.current >= navigationDelay) {
             e.preventDefault();
-            lastScrollTime = now;
+            lastScrollTimeRef.current = now;
             handleGlobalScroll('down');
+          } else {
+            e.preventDefault();
           }
         }
-        // Otherwise, let the container scroll naturally
+        // Otherwise, let the container scroll naturally (don't prevent default)
       } else {
         // Scrolling up
-        if (atTop) {
-          // At top, navigate to previous page
-          if (now - lastScrollTime >= 1000) { // Longer delay for page navigation
+        if (!hasScroll || atTop) {
+          // No scrollable content OR at top - navigate to previous page
+          if (now - lastScrollTimeRef.current >= navigationDelay) {
             e.preventDefault();
-            lastScrollTime = now;
+            lastScrollTimeRef.current = now;
             handleGlobalScroll('up');
+          } else {
+            e.preventDefault();
           }
         }
-        // Otherwise, let the container scroll naturally
+        // Otherwise, let the container scroll naturally (don't prevent default)
       }
     };
 
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-      return () => container.removeEventListener('wheel', handleWheel);
-    }
-  }, [isMobile, isTransitioning, handleGlobalScroll]);
+    // Attach to window to capture all wheel events
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [isMobile, isTransitioning, handleGlobalScroll, checkScrollPosition]);
 
   const contextValue: ScrollablePageContextType = {
     isAtBottom,

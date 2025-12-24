@@ -11,7 +11,7 @@ function CrewContent() {
   return (
     <div 
       ref={containerRef}
-      className="min-h-screen overflow-y-auto"
+      className="h-screen overflow-y-auto"
       onScroll={handleScroll}
     >
       <Header />
