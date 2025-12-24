@@ -121,11 +121,12 @@ const Crew: React.FC = () => {
 
                         {/* Specialisation */}
                         <div className="mb-2 flex-1">
-                          <h4 className="font-bold text-base text-gray-900">Specialisation:</h4>
+                          <h4 className="font-bold text-base text-gray-900 mb-1">Specialisation:</h4>
                           <div className="space-y-1">
                             {member.specializations.map((spec, index) => (
-                              <div key={index} className="text-gray-600 text-sm">
-                                {spec}
+                              <div key={index} className="text-gray-600 text-sm flex items-start">
+                                <span className="text-gray-900 mr-2 text-sm">•</span>
+                                <span className="flex-1">{spec}</span>
                               </div>
                             ))}
                           </div>

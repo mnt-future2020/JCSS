@@ -53,15 +53,15 @@ export default function ContactUs() {
     { 
       name: 'Bangalore', 
       country: 'India', 
-      coordinates: [77.5946, 12.9716],
+      coordinates: [77.5946, 12.9716], // Sankey Road area - correct
       address: '2nd Floor UniWorth Plaza, #20 Sankey Road, Bangalore -560020',
-      phone: '+91-44-42075580',
+      phone: '+91 80 2334 7000',
       fax: '+91-44-42075581'
     },
     { 
       name: 'Ahmedabad', 
       country: 'India', 
-      coordinates: [72.5714, 23.0225],
+      coordinates: [72.5200, 23.0370], // More precise for Prahlad Nagar area
       address: 'No.805A, Pinnacle Business Park,Corporate Road, Prahlad Nagar, Ahmedabad - 380015' ,
       phone: '+91-44-42075580',
       fax: '+91-44-42075581'
@@ -69,7 +69,7 @@ export default function ContactUs() {
     { 
       name: 'Chennai', 
       country: 'India', 
-      coordinates: [80.2707, 13.0827],
+      coordinates: [80.2340, 13.0418], // More precise for T.Nagar area
       address: 'Mena Kempala Arcade, 7A, 7th floor, A Block, New No. 18 & 20 (Old No. 113), Sir Theeagaraya Road, T.Nagar, Chennai – 600 017',
       phone: '+91-44-42075580',
       fax: '+91-44-42075581'
@@ -77,7 +77,7 @@ export default function ContactUs() {
     { 
       name: 'Gurgaon', 
       country: 'India', 
-      coordinates: [77.0266, 28.4595],
+      coordinates: [77.0688, 28.4595], // More precise for Sector 21 area
       address: 'Unit no. 220, Suncity Trade Tower, Sector 21, Near Krishna Chowk Gurgaon-122001, India',
       phone: '+91-44-42075580',
       fax: '+91-44-42075581'
@@ -85,7 +85,7 @@ export default function ContactUs() {
     { 
       name: 'Hyderabad', 
       country: 'India', 
-      coordinates: [78.4867, 17.3850],
+      coordinates: [78.4089, 17.4126], // More precise for Jubilee Hills area
       address: 'SL Jubilee, 3rd Floor, Office No.304 Regus Eversun Business Centre Pvt Ltd, Plot No 1201 & 1215A, Road No.36 Jubile Hills, Hyderabad - 500034',
       phone: '+91-44-42075580',
       fax: '+91-44-42075581'
@@ -93,7 +93,7 @@ export default function ContactUs() {
     { 
       name: 'Pune', 
       country: 'India', 
-      coordinates: [73.8567, 18.5204],
+      coordinates: [73.8567, 18.5204], // Yerawada area - correct
       address: 'Office No. 611 to 617, Global Square, Deccan College Road, Yerawada, Pune, Maharashtra-411006',
       phone: '+91-44-42075580',
       fax: '+91-44-42075581'
@@ -101,25 +101,25 @@ export default function ContactUs() {
     { 
       name: 'Singapore', 
       country: 'Singapore', 
-      coordinates: [103.8198, 1.3521],
-      address: 'Mena Kempala Arcade, 7A, 7th floor, A Block, New No. 18 & 20 (Old No. 113), Sir Theeagaraya Road, T.Nagar, Chennai – 600 017',
-      phone: '+91-44-42075580',
+      coordinates: [103.8501, 1.2830], // More precise for Cecil Street area
+      address: 'The Octagon, 105 Cecil Street, # 13-01, Singapore — 069534',
+      phone: '+65 3157 1767',
       fax: '+91-44-42075581'
     },
     { 
       name: 'Tokyo', 
       country: 'Japan', 
-      coordinates: [139.6917, 35.6895],
-      address: 'Mena Kempala Arcade, 7A, 7th floor, A Block, New No. 18 & 20 (Old No. 113), Sir Theeagaraya Road, T.Nagar, Chennai – 600 017',
-      phone: '+91-44-42075580',
+      coordinates: [139.7595, 35.6681], // More precise for Minato-ku area
+      address: 'Level 14, Hibiya Central Building, 1-2-9 Nishi Shimbashi, Minato-ku, Tokyo — 105-0003',
+      phone: '+81 90 9232 5671',
       fax: '+91-44-42075581'
     },
     { 
       name: 'Jakarta', 
       country: 'Indonesia', 
-      coordinates: [106.8451, -6.2088],
-      address: 'Mena Kempala Arcade, 7A, 7th floor, A Block, New No. 18 & 20 (Old No. 113), Sir Theeagaraya Road, T.Nagar, Chennai – 600 017',
-      phone: '+91-44-42075580',
+      coordinates: [106.8294, -6.2297], // More precise for Kuningan area
+      address: 'Menara Karya, Level 28, Jl. H R Rasuna Said, Kuningan, Jakarta, Indonesia 12950',
+      phone: '+62 857 1913 3365',
       fax: '+91-44-42075581'
     }
   ];
@@ -261,8 +261,9 @@ export default function ContactUs() {
                 <g 
                   onClick={() => handleMarkerClick(location)}
                   style={{ cursor: 'pointer' }}
-                  className="hover:scale-125 transition-transform duration-300"
+                  className="hover:scale-110 transition-transform duration-300"
                 >
+                  {/* Pin Marker */}
                   <g transform="translate(-8, -16)">
                     <path
                       d="M8 0C3.582 0 0 3.582 0 8c0 6 8 8 8 8s8-2 8-8c0-4.418-3.582-8-8-8z"
@@ -272,6 +273,34 @@ export default function ContactUs() {
                     />
                     <circle cx="8" cy="8" r="2" fill="#ffffff" />
                   </g>
+                  
+                  {/* City Name Label */}
+                  <text
+                    textAnchor="middle"
+                    y={-20}
+                    className="fill-white text-xs font-semibold"
+                    style={{ 
+                      fontSize: '10px',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                      filter: 'drop-shadow(1px 1px 1px rgba(0,0,0,0.8))'
+                    }}
+                  >
+                    {location.name}
+                  </text>
+                  
+                  {/* Country Name Label */}
+                  {/* <text
+                    textAnchor="middle"
+                    y={-8}
+                    className="fill-gray-300 text-xs"
+                    style={{ 
+                      fontSize: '8px',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                      filter: 'drop-shadow(1px 1px 1px rgba(0,0,0,0.8))'
+                    }}
+                  >
+                    {location.country}
+                  </text> */}
                 </g>
               </Marker>
             ))}
@@ -287,7 +316,7 @@ export default function ContactUs() {
                 <p className="text-xs text-gray-600 mb-2">{selectedLocation.address}</p>
                 <div className="text-xs text-gray-600">
                   <div>Tel: {selectedLocation.phone}</div>
-                  <div>Fax: {selectedLocation.fax}</div>
+                  {/* <div>Fax: {selectedLocation.fax}</div> */}
                 </div>
               </div>
             </div>
@@ -437,7 +466,7 @@ export default function ContactUs() {
             projection="geoMercator"
             projectionConfig={{
               scale: 500,
-              center: [105, 20]
+              center: [110, 20]
             }}
             width={200}
             height={600}
@@ -468,7 +497,7 @@ export default function ContactUs() {
                 <g 
                   onClick={() => handleMarkerClick(location)}
                   style={{ cursor: 'pointer' }}
-                  className="hover:scale-125 transition-transform duration-300"
+                  className="hover:scale-110 transition-transform duration-300"
                 >
                   {/* Custom Pin Marker */}
                   <g transform="translate(-12, -24)">
@@ -506,6 +535,34 @@ export default function ContactUs() {
                       fill={selectedLocation?.name === location.name ? "#ea580c" : "#f97316"}
                     />
                   </g>
+                  
+                  {/* City Name Label */}
+                  <text
+                    textAnchor="middle"
+                    y={-30}
+                    className="fill-white text-sm font-bold"
+                    style={{ 
+                      fontSize: '12px',
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
+                      filter: 'drop-shadow(2px 2px 2px rgba(0,0,0,0.8))'
+                    }}
+                  >
+                    {location.name}
+                  </text>
+                  
+                  {/* Country Name Label */}
+                  {/* <text
+                    textAnchor="middle"
+                    y={-16}
+                    className="fill-gray-300 text-xs"
+                    style={{ 
+                      fontSize: '10px',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
+                      filter: 'drop-shadow(1px 1px 1px rgba(0,0,0,0.8))'
+                    }}
+                  >
+                    {location.country}
+                  </text> */}
                   
                   {/* Pulsing Ring Animation */}
                   <circle
@@ -548,9 +605,9 @@ export default function ContactUs() {
                   <div className="text-sm text-gray-600">
                     <span className="font-medium">Tel:</span> {selectedLocation.phone}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  {/* <div className="text-sm text-gray-600">
                     <span className="font-medium">Fax:</span> {selectedLocation.fax}
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

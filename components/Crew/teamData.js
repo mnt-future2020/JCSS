@@ -149,21 +149,21 @@ export const teamMembers = [
     academic: ["FCA"],
     linkedin: "https://linkedin.com/in/niranjan-nk"
   },
-  {
-    id: 11,
-    name: "NAGARAJA K S",
-    image: "/images/team/11 NAGARAJA K S.png",
-    position: "Senior Associate",
-    description: "Expert in corporate advisory and business restructuring with extensive experience in mergers and acquisitions.",
-    specializations: [
-      "Corporate Advisory",
-      "Business Restructuring",
-      "Mergers & Acquisitions",
-      "Due Diligence"
-    ],
-    academic: ["CA", "MBA"],
-    linkedin: "https://linkedin.com/in/nagaraja-ks"
-  },
+  // {
+  //   id: 11,
+  //   name: "NAGARAJA K S",
+  //   image: "/images/team/11 NAGARAJA K S.png",
+  //   position: "Senior Associate",
+  //   description: "Expert in corporate advisory and business restructuring with extensive experience in mergers and acquisitions.",
+  //   specializations: [
+  //     "Corporate Advisory",
+  //     "Business Restructuring",
+  //     "Mergers & Acquisitions",
+  //     "Due Diligence"
+  //   ],
+  //   academic: ["CA", "MBA"],
+  //   linkedin: "https://linkedin.com/in/nagaraja-ks"
+  // },
   {
     id: 12,
     name: "MADHUSOODHAN HEGDE",
@@ -211,14 +211,13 @@ export const teamMembers = [
     name: "YASHVANT NIJAGAL",
     image: "/images/team/15 YASHVANT NIJAGAL.png",
     position: "Senior Associate",
-    description: "Expert in corporate finance and advisory services with extensive experience in business valuation and financial modeling.",
+    description: "A seasoned Chartered Accountant in the field of Finance with over a decade’s experience in Startup Consulting. Yashvant is passionate about contributing to the success of businesses by combining financial acumen with technological solutions. Yashvant positions himself as a trusted advisor in the startup ecosystem and a trailblazer in enterprise technology solutions",
     specializations: [
-      "Corporate Finance",
-      "Business Valuation",
-      "Financial Modeling",
-      "Investment Advisory"
+      "Startup Advisory",
+      "Business Consulting",
+      "Technology Integration"
     ],
-    academic: ["CA", "CFA"],
+    academic: ["CA"],
     linkedin: "https://linkedin.com/in/yashvant-nijagal"
   },
   {
@@ -226,14 +225,15 @@ export const teamMembers = [
     name: "KIRAN KUMAR",
     image: "/images/team/16 KIRAN KUMAR.png",
     position: "Associate",
-    description: "Skilled in direct taxation and transfer pricing with focus on client advisory and tax planning strategies.",
+    description: "Kiran Kumar, a seasoned Audit and Assurance professional with 13+ years of experience, holds qualifications including B.Com, FCA, CS, and ACCA Finalist. As an Associate Partner at JCSS, he leads domestic and international teams, specializing in statutory audit, IFC documentation, and tailored solutions across IT, Manufacturing, Real Estate, Fintech, and other sectors. Committed to transparency and professionalism, he ensures compliance and fosters long-term client relationships.",
     specializations: [
-      "Direct Taxation",
-      "Transfer Pricing",
-      "Tax Planning",
-      "Client Advisory"
+      "IT sector",
+      "Manufacturing sector",
+      "Real Estate",
+      "Fintech",
+      "Trading and Other Services sectors"
     ],
-    academic: ["CA"],
+    academic: [ "B.Com", "FCA","CS"],
     linkedin: "https://linkedin.com/in/kiran-kumar"
   },
   {
@@ -241,14 +241,16 @@ export const teamMembers = [
     name: "SUBHASH MEHTA",
     image: "/images/team/17 SUBHASH MEHTA.png",
     position: "Manager",
-    description: "Experienced in indirect taxation and business advisory services with specialization in customs and foreign trade regulations.",
+    description: "Subhash Mehta is a Member of Institute of Chartered Accountants of India and Institute of Company Secretaries of India. Head of Direct Taxation for the JCSS Bangalore & Pune Office.CA Subhash Mehta has over 12 years of varied experience in providing corporate tax advisory, transaction advisory, statutory compliance, International taxation, tax litigation and transfer pricing.",
     specializations: [
-      "Indirect Taxation",
-      "Customs Advisory",
-      "Foreign Trade Policy",
-      "Business Consulting"
+      "Corporate tax advisory",
+      "Transaction advisory",
+      "Statutory compliance",
+      "International taxation",
+      "Tax litigation",
+      "Transfer pricing"
     ],
-    academic: ["CA"],
+    academic: ["CA","CS"],
     linkedin: "https://linkedin.com/in/subhash-mehta"
   },
   {
@@ -256,14 +258,17 @@ export const teamMembers = [
     name: "PADIKKAL VEETTIL RAJESH",
     image: "/images/team/18 PADIKKAL VEETTIL RAJESH.png",
     position: "Senior Associate",
-    description: "Specializes in corporate law and regulatory compliance with comprehensive industry knowledge in manufacturing and services sectors.",
+    description: "Rajesh Padikkal Veettil, M.Com, FCA, PGDCA, a commerce graduate who completed his Chartered Accountancy in October 2006, is a seasoned corporate tax professional with over 17 years of experience. His expertise includes litigation support, transfer pricing, cross-border transactions, tax optimization, international tax treaties, mergers and acquisitions, and tax audits.",
     specializations: [
-      "Corporate Law",
-      "Regulatory Compliance",
-      "Industry Advisory",
-      "Legal Documentation"
+      "Transfer pricing compliance and benchmarking solutions.",
+      "Cross-border transaction structuring.",
+      "Tax optimization consulting and Transaction planning.",
+      "International tax treaty consulting.",
+      "Mergers and acquisitions.",
+      "Tax audits, consulting, and certifications.",
+      "Litigation support services, encompassing representation before various tax authorities and appellate bodies"
     ],
-    academic: ["CA", "CS"],
+    academic: ["M Com", "FCA", "PGDCA"],
     linkedin: "https://linkedin.com/in/padikkal-veettil-rajesh"
   },
   {
@@ -271,14 +276,15 @@ export const teamMembers = [
     name: "MANEESH AGARWAL",
     image: "/images/team/19 MANEESH AGARWAL.png",
     position: "Associate Manager",
-    description: "Expert in financial reporting and regulatory compliance with focus on listed companies and corporate governance.",
+    description: "Maneesh Agarwal, a Chartered Accountant and Partner at JCSS. Maneesh has been a driving force in the field of professional service specializing in taxation.As the head of the Ahmedabad office, Maneesh leads with a strategic vision, aligning the firm with the dynamic needs of clients and the evolving taxation landscape.",
     specializations: [
-      "Financial Reporting",
-      "Corporate Governance",
-      "Listed Company Compliance",
-      "Regulatory Affairs"
+      "Tax Litigation",
+      "Corporate Tax Advisory",
+      "Transaction Advisory",
+      "International Taxation",
+      "Transfer Pricing"
     ],
-    academic: ["CA", "CS"],
+    academic: ["CA"],
     linkedin: "https://linkedin.com/in/maneesh-agarwal"
   },
   {
@@ -286,12 +292,12 @@ export const teamMembers = [
     name: "VIJAYACHANDRA SHETTY",
     image: "/images/team/20 VIJAYACHANDRA SHETTY.png",
     position: "Senior Associate",
-    description: "Skilled in audit and assurance with focus on client solutions and process improvement across various industry verticals.",
+    description: "Chartered Accountant and Fellow Member of JCSS. Possesses expertise in Accounting, Financial Reporting, Payroll Management, and Regulatory Compliance.",
     specializations: [
-      "Audit and Assurance",
-      "Process Improvement",
-      "Client Solutions",
-      "Industry Analysis"
+      "Accounting",
+      "Financial reporting",
+      "Payroll management",
+      "Regulatory compliances"
     ],
     academic: ["CA"],
     linkedin: "https://linkedin.com/in/vijayachandra-shetty"
@@ -301,14 +307,14 @@ export const teamMembers = [
     name: "SATYAJIT JOSHI",
     image: "/images/team/21 SATYAJIT JOSHI.png",
     position: "Associate",
-    description: "Experienced in business consulting and financial advisory with specialization in startup ecosystem and growth strategies.",
+    description: "Satyajit is an Associate Member of ICSI and has over 18 years’ experience in Corporate Advisory Services. Satyajit is an Associate Director in JCSS and specialises in Corporate Secretarial services and Transaction Advisory services.",
     specializations: [
-      "Business Consulting",
-      "Financial Advisory",
-      "Startup Ecosystem",
-      "Growth Strategies"
+      "Indian Companies Act",
+      "FEMA Advisory",
+      "Inbound and Outbound Advisory",
+      "M&A"
     ],
-    academic: ["CA", "MBA"],
+    academic: ["ACS"],
     linkedin: "https://linkedin.com/in/satyajit-joshi"
   },
   {
@@ -316,14 +322,15 @@ export const teamMembers = [
     name: "SHAILESH BAPAT",
     image: "/images/team/22 SHAILESH BAPAT.png",
     position: "Senior Manager",
-    description: "Expert in comprehensive advisory services with extensive experience in tax planning, corporate restructuring, and strategic business advisory.",
+    description: "Shailesh is a seasoned Chartered Accountant with over 15 years of experience specializing in Indirect Tax. He has advised multinational corporations in IT/ITES, Fintech, manufacturing, and trading industries. His expertise includes Customs, SEZ, GST, and Foreign Trade Policy. Shailesh is recognized for providing strategic guidance, optimizing tax positions, and ensuring compliance with a dynamic regulatory landscape.",
     specializations: [
-      "Tax Planning",
-      "Corporate Restructuring",
-      "Strategic Advisory",
-      "Business Development"
+      "Tax advisory",
+      "Transaction structuring",
+      "Regulatory compliance",
+      "Litigation",
+      "Due Diligence"
     ],
-    academic: ["CA", "MBA"],
+    academic: ["CA"],
     linkedin: "https://linkedin.com/in/shailesh-bapat"
   }
 ];

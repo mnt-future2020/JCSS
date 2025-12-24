@@ -10,16 +10,27 @@ import Legal from '@/components/services/Legal';
 import ContactUs from '@/components/Contact/ContactUs';
 import Header from '@/components/Header/Header';
 import Navigation from '@/components/Header/Navigation';
+import { useGlobalScroll } from '@/components/GlobalScrollProvider';
 
 function ServicesContent() {
   const searchParams = useSearchParams();
-  const [activeService, setActiveService] = useState('Advisory');
-  const [currentScreen, setCurrentScreen] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const { currentScreen, setCurrentScreen, isTransitioning } = useGlobalScroll();
   const [isMobile, setIsMobile] = useState(false);
   const [mobileScreen, setMobileScreen] = useState(0);
   
   const servicesRef = useRef<HTMLDivElement>(null);
+
+  // Service order for the 5 screens
+  const serviceOrder = [
+    'Advisory',
+    'Assurance', 
+    'Support',
+    'Tax',
+    'Legal'
+  ];
+
+  // Get current service based on current screen (0-4)
+  const activeService = serviceOrder[currentScreen] || 'Advisory';
 
   // Check if device is mobile
   useEffect(() => {
@@ -37,124 +48,20 @@ function ServicesContent() {
     const serviceParam = searchParams.get('service');
     if (serviceParam && serviceOrder.includes(serviceParam)) {
       const newServiceIndex = serviceOrder.indexOf(serviceParam);
-      setActiveService(serviceParam);
-      setServiceIndex(newServiceIndex);
-      setCurrentScreen(0);
-      setMobileScreen(0); // Reset to first screen when navigating from header
+      setCurrentScreen(newServiceIndex);
+      setMobileScreen(0);
     }
-  }, [searchParams]);
-
-  // Service screen counts
-  const serviceScreenCounts = {
-    'Advisory': 4,
-    'Assurance': 6,
-    'Support': 7,
-    'Tax': 12,
-    'Legal': 5,
-    'Contact Us': 4
-  };
-
-  // Service order for continuous scrolling
-  const serviceOrder = [
-    'Advisory',
-    'Assurance', 
-    'Support',
-    'Tax',
-    'Legal',
-    'Contact Us'
-  ];
-
-  // Calculate total screens across all services
-  const totalScreens = Object.values(serviceScreenCounts).reduce((sum, count) => sum + count, 0);
-
-  // Get current service based on service index (always screen 0)
-  const getCurrentServiceFromIndex = (serviceIndex: number) => {
-    if (serviceIndex >= 0 && serviceIndex < serviceOrder.length) {
-      return {
-        service: serviceOrder[serviceIndex],
-        localScreen: 0 // Always start at screen 0 for each service
-      };
-    }
-    
-    // Fallback to first service
-    return {
-      service: serviceOrder[0],
-      localScreen: 0
-    };
-  };
-
-  const [serviceIndex, setServiceIndex] = useState(0);
-
-  // Update active service based on service index
-  const updateServiceFromIndex = (newServiceIndex: number) => {
-    const { service, localScreen } = getCurrentServiceFromIndex(newServiceIndex);
-    setActiveService(service);
-    setCurrentScreen(localScreen);
-  };
-
-  const handleServiceChange = (direction: 'up' | 'down') => {
-    if (isTransitioning) return;
-    
-    let newServiceIndex = serviceIndex;
-    
-    if (direction === 'down' && serviceIndex < serviceOrder.length - 1) {
-      newServiceIndex = serviceIndex + 1;
-    } else if (direction === 'up' && serviceIndex > 0) {
-      newServiceIndex = serviceIndex - 1;
-    } else {
-      return; // No change needed
-    }
-    
-    setIsTransitioning(true);
-    setServiceIndex(newServiceIndex);
-    updateServiceFromIndex(newServiceIndex);
-    
-    setTimeout(() => setIsTransitioning(false), 800);
-  };
-
-  // Handle screen changes within a service (for subtitle clicks)
-  const handleScreenChange = (screen: number) => {
-    setCurrentScreen(screen);
-  };
+  }, [searchParams, setCurrentScreen]);
 
   // Handle mobile screen changes
   const handleMobileScreenChange = (screen: number) => {
     setMobileScreen(screen);
   };
 
-  // Reset screens when service changes
+  // Reset mobile screens when service changes
   useEffect(() => {
-    setCurrentScreen(0);
     setMobileScreen(0);
   }, [activeService]);
-
-  // Global scroll handler for continuous scrolling (desktop only)
-  useEffect(() => {
-    if (isMobile) return; // Disable scroll hijacking on mobile
-    
-    let lastScrollTime = 0;
-    const scrollDelay = 1000;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      
-      const now = Date.now();
-      if (now - lastScrollTime < scrollDelay || isTransitioning) return;
-      
-      lastScrollTime = now;
-
-      if (e.deltaY > 0) {
-        // Scroll down
-        handleServiceChange('down');
-      } else {
-        // Scroll up
-        handleServiceChange('up');
-      }
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [serviceIndex, isTransitioning, isMobile]);
 
   if (isMobile) {
     // Mobile Layout - Simple scrollable sections
@@ -164,7 +71,10 @@ function ServicesContent() {
         <Navigation 
           activeService={activeService}
           onServiceChange={(service) => {
-            setActiveService(service);
+            const serviceIndex = serviceOrder.indexOf(service);
+            if (serviceIndex !== -1) {
+              setCurrentScreen(serviceIndex);
+            }
             setMobileScreen(0);
           }}
         />
@@ -177,10 +87,10 @@ function ServicesContent() {
           
           {/* Service Selection Tabs */}
           <div className="flex flex-wrap gap-2 justify-center mb-8">
-            {serviceOrder.map((service) => (
+            {serviceOrder.map((service, index) => (
               <button
                 key={service}
-                onClick={() => setActiveService(service)}
+                onClick={() => setCurrentScreen(index)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                   activeService === service
                     ? 'bg-orange-500 text-white'
@@ -225,9 +135,6 @@ function ServicesContent() {
               onScreenChange={handleMobileScreenChange}
             />
           )}
-          {activeService === 'Contact Us' && (
-            <ContactUs />
-          )}
         </div>
 
         {/* Mobile Floating Action Button */}
@@ -240,16 +147,17 @@ function ServicesContent() {
     );
   }
 
-  // Desktop Layout - Original scroll-based experience
+  // Desktop Layout - Global scroll controlled
   return (
     <div className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
     <Header />
     <Navigation 
       activeService={activeService}
       onServiceChange={(service) => {
-        setActiveService(service);
-        setServiceIndex(serviceOrder.indexOf(service));
-        setCurrentScreen(0);
+        const serviceIndex = serviceOrder.indexOf(service);
+        if (serviceIndex !== -1) {
+          setCurrentScreen(serviceIndex);
+        }
       }}
     />
     <div className="relative bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
@@ -258,36 +166,33 @@ function ServicesContent() {
         <main className="relative">
           {activeService === 'Advisory' && (
             <CorporateAdvisory 
-              currentScreen={currentScreen} 
-              onScreenChange={handleScreenChange}
+              currentScreen={0} 
+              onScreenChange={() => {}}
             />
           )}
           {activeService === 'Assurance' && (
             <AuditAssurance 
-              currentScreen={currentScreen} 
-              onScreenChange={handleScreenChange}
+              currentScreen={0} 
+              onScreenChange={() => {}}
             />
           )}
           {activeService === 'Support' && (
             <EnterpriseSupport 
-              currentScreen={currentScreen} 
-              onScreenChange={handleScreenChange}
+              currentScreen={0} 
+              onScreenChange={() => {}}
             />
           )}
           {activeService === 'Tax' && (
             <Tax 
-              currentScreen={currentScreen} 
-              onScreenChange={handleScreenChange}
+              currentScreen={0} 
+              onScreenChange={() => {}}
             />
           )}
           {activeService === 'Legal' && (
             <Legal 
-              currentScreen={currentScreen} 
-              onScreenChange={handleScreenChange}
+              currentScreen={0} 
+              onScreenChange={() => {}}
             />
-          )}
-          {activeService === 'Contact Us' && (
-            <ContactUs />
           )}
         </main>
       </div>
