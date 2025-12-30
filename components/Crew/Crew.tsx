@@ -57,7 +57,11 @@ const Crew: React.FC = () => {
             sm:grid-cols-2 
             lg:grid-cols-3 
             xl:grid-cols-4
+<<<<<<< HEAD
             2xl:grid-cols-5 
+=======
+            2xl:grid-cols-5
+>>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
             auto-rows-fr
             place-items-center
             w-full

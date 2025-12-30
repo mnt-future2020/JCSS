@@ -10,7 +10,11 @@ const serviceItems = [
   'Support',
   'Tax',
   'Legal',
+<<<<<<< HEAD
   'FractionalCFO',
+=======
+  'Fractional CFO',
+>>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
   'Contact Us'
 ];
 
@@ -21,7 +25,11 @@ const servicePageMap: { [key: string]: string } = {
   'Support': '/services?service=Support',
   'Tax': '/services?service=Tax',
   'Legal': '/services?service=Legal',
+<<<<<<< HEAD
   'FractionalCFO': '/services?service=FractionalCFO',
+=======
+  'Fractional CFO': '/services?service=Fractional CFO',
+>>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
   'Contact Us': '/contact-us'
 };
 
@@ -32,7 +40,11 @@ const serviceSectionMap: { [key: string]: string } = {
   'Support': 'support-section',
   'Tax': 'tax-section',
   'Legal': 'legal-section',
+<<<<<<< HEAD
   'FractionalCFO': 'fractional-cfo-section',
+=======
+  'Fractional CFO': 'fractional-cfo-section',
+>>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
   'Contact Us': 'contact-section'
 };
 
@@ -166,7 +178,11 @@ function NavigationContent({ activeService, onServiceChange }: NavigationProps) 
   };
   return (
     <>
+<<<<<<< HEAD
       {/* Desktop & Laptop - Right Side Vertical Service Menu */}
+=======
+      {/* Desktop & Tablet - Right Side Vertical Service Menu (Responsive) */}
+>>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
       <div className="hidden md:flex fixed right-2 md:right-3 lg:right-4 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1 md:space-y-1.5 lg:space-y-2">
         {serviceItems.map((service, index) => {
           const isActive = currentActiveService === service;
@@ -218,9 +234,9 @@ function NavigationContent({ activeService, onServiceChange }: NavigationProps) 
 
 export default function Navigation(props: NavigationProps) {
   return (
-    <Suspense fallback={<div className="hidden md:flex fixed right-3 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1">
-      <div className="animate-pulse bg-slate-700/80 py-4 xl:py-6 px-2 xl:px-2.5 text-xs xl:text-sm rounded-r-2xl">
-        <div className="w-16 h-4 bg-slate-600 rounded"></div>
+    <Suspense fallback={<div className="hidden md:flex fixed right-2 md:right-3 lg:right-4 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1 md:space-y-1.5 lg:space-y-2">
+      <div className="animate-pulse bg-slate-700/80 py-2 md:py-2.5 lg:py-3 xl:py-4 px-1.5 md:px-2 lg:px-2.5 xl:px-3 text-xs md:text-xs lg:text-sm rounded-r-xl md:rounded-r-xl lg:rounded-r-2xl">
+        <div className="w-12 md:w-14 lg:w-16 h-3 bg-slate-600 rounded"></div>
       </div>
     </div>}>
       <NavigationContent {...props} />

@@ -3,7 +3,6 @@ import { Barlow } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header/Header";
-import GlobalScrollProvider from "../components/GlobalScrollProvider";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -28,9 +27,7 @@ export default function RootLayout({
           src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
-        <GlobalScrollProvider>
-          {children}
-        </GlobalScrollProvider>
+        {children}
       </body>
     </html>
   );
