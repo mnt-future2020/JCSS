@@ -102,7 +102,7 @@ export default function EnterpriseSupport({ currentScreen, onScreenChange }: Ent
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
+      <div className="relative z-10 h-full flex flex-col justify-center mt-2 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
         <div className="text-right max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl w-full ml-auto">
           
           {/* Fixed Header Section - Title and Subtitle */}

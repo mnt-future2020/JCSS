@@ -169,7 +169,7 @@ export default function Tax({ currentScreen, onScreenChange }: TaxProps) {
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
+      <div className="relative z-10 h-full flex flex-col justify-center mt-3 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
         <div className="text-left max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl w-full">
           
           {/* Fixed Header Section - Title and Subtitle */}

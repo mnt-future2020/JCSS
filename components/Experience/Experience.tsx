@@ -39,9 +39,9 @@ export default function Experience() {
   ];
 
   return (
-    <div className="relative min-h-full w-full" style={{ backgroundColor: '#1d4e77' }}>
+    <div className="fixed inset-0 min-h-screen w-screen overflow-hidden" style={{ backgroundColor: '#1d4e77' }}>
       {/* Background Image */}
-      <div className="fixed inset-0 z-0">
+      <div className="absolute inset-0 z-0">
         <Image
           src="/images/exp.jpg"
           alt="Experience Background"
@@ -54,7 +54,7 @@ export default function Experience() {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 flex items-start justify-center p-4 sm:p-6 lg:p-8 pt-28 sm:pt-24 lg:pt-32 pb-6 sm:pb-8">
+      <div className="relative z-10 h-full overflow-y-auto flex items-start justify-center p-4 sm:p-6 lg:p-8 pt-28 sm:pt-24 lg:pt-32 pb-6 sm:pb-8">
         <div className="max-w-7xl w-full">
           {/* Case Studies Grid */}
           <div className="space-y-4 sm:space-y-6">

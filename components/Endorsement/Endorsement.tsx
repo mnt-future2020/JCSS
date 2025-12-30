@@ -94,7 +94,7 @@ export default function Endorsement() {
               >
                 {/* Profile Image - Responsive width */}
                 <div className="relative w-full sm:w-2/5 lg:w-1/3 shrink-0">
-                  <div className="w-full h-48 sm:h-full min-h-[200px] sm:min-h-[240px]">
+                  <div className="w-full h-48 sm:h-full min-h-[200px] sm:min-h-60">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.name}

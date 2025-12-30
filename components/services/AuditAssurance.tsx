@@ -13,7 +13,9 @@ export default function AuditAssurance({ currentScreen, onScreenChange }: AuditA
     {
       id: 0, // AD1 - Nothing highlighted
       title: "Assurance",
-      content: "Audit and attestation reflects the present and guides in your business endeavours. JCSS ensures that the financial picture is displayed in an accurate and transparent manner, enhancing the opportunities for businesses to negotiate better terms with their investors, in turn helping businesses achieve their financing and growth objectives",
+      content: [
+        "Audit and attestation reflects the present and guides in your business endeavours. JCSS ensures that the financial picture is displayed in an accurate and transparent manner, enhancing the opportunities for businesses to negotiate better terms with their investors, in turn helping businesses achieve their financing and growth objectives"
+      ],
       services: [
         "Statutory Audits",
         "Tax Audit",
@@ -90,7 +92,7 @@ export default function AuditAssurance({ currentScreen, onScreenChange }: AuditA
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="relative z-10 h-full flex flex-col justify-center mt-2 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <div className="text-left max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl w-full">
           
           {/* Fixed Header Section - Title and Subtitle */}
@@ -144,9 +146,19 @@ export default function AuditAssurance({ currentScreen, onScreenChange }: AuditA
               className="space-y-4 sm:space-y-6 text-slate-200 animate-fade-in-up pr-2"
             >
             {/* Main Content */}
-            <p className="text-sm sm:text-base leading-relaxed text-slate-200">
-              {currentScreenData.content}
-            </p>
+            {Array.isArray(currentScreenData.content) ? (
+              <div className="space-y-4">
+                {currentScreenData.content.map((paragraph, index) => (
+                  <p key={index} className="text-sm sm:text-base leading-relaxed text-slate-200">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm sm:text-base leading-relaxed text-slate-200">
+                {currentScreenData.content}
+              </p>
+            )}
 
             {/* Additional Content for screen 5 */}
             {currentScreenData.additionalContent && (

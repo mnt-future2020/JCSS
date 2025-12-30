@@ -20,6 +20,7 @@ export default function Header() {
     'Assurance',
     'Tax ',
     'Legal',
+    'Fractional CFO'
   ];
 
   const taxServices = [
@@ -76,8 +77,14 @@ export default function Header() {
     setIsTaxDropdownOpen(false);
   };
 
+  /* 
+   * HEADER LAYOUT STRUCTURE:
+   * - DESKTOP VIEW (hidden xl:flex): Horizontal navigation bar with Services dropdown & external links
+   * - MOBILE VIEW (xl:hidden): Hamburger menu button + Sidebar overlay with collapsible navigation
+   * Responsive breakpoint: xl = 1280px. Uses Tailwind's conditional rendering for each view.
+   */
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-13 z-50 transition-all duration-300 ${
       shouldHaveDarkBackground || isScrolled ? 'bg-[#042d4d] shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
@@ -98,7 +105,7 @@ export default function Header() {
         {/* Right Side Container - Navigation */}
         <div className="flex items-center gap-8">
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden xl:flex items-center space-x-6">
             {navItems.map((item, index) => {
               const isHome = item === 'Home';
               const isServices = item === 'Services';
@@ -113,23 +120,47 @@ export default function Header() {
               const isActive = pathname === href;
               
               return (
-                <Link
-                  key={item}
-                  href={href}
-                  className={`nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 ${
-                    isActive ? 'text-orange-500' : 'text-white'
-                  }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {item}
-                </Link>
+                <div key={item} className="flex items-center gap-6">
+                  <Link
+                    href={href}
+                    className={`nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 ${
+                      isActive ? 'text-orange-500' : 'text-white'
+                    }`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {item}
+                  </Link>
+                  {item === 'Newsletters' && (
+                    <>
+                      <span className="text-white/30">|</span>
+                      <a
+                        href="https://www.jcssadvisory.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white text-lg font-medium hover:text-orange-500 transition-colors"
+                      >
+                        JCSS Advisory
+                      </a>
+                       <span className="text-white/30">|</span>
+                      <a
+                        href="https://jcsslaw.com/home/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white text-lg font-medium hover:text-orange-500 transition-colors"
+                      >
+                        JCSS Law
+                      </a>
+                      <span className="text-white/30">|</span>
+                    </>
+                  )}
+                </div>
               );
             })}
           </nav>
 
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-white mobile-menu-button z-50 relative"
+            className="xl:hidden text-white mobile-menu-button z-50 relative"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? (
@@ -144,7 +175,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Sidebar Menu */}
-      <div className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+      <div className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
         isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
       }`}>
         {/* Backdrop */}
@@ -163,12 +194,7 @@ export default function Header() {
               height={60}
               className="w-auto h-10 rounded-sm"
             />
-            <button 
-              onClick={closeMobileMenu}
-              className="text-white hover:text-gray-200 transition-colors"
-            >
-              <IconX className="w-6 h-6" />
-            </button>
+        
           </div>
 
           {/* Navigation Menu */}
@@ -283,18 +309,41 @@ export default function Header() {
               const isActive = pathname === href;
               
               return (
-                <Link
-                  key={item}
-                  href={href}
-                  onClick={closeMobileMenu}
-                  className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 ${
-                    isActive ? 'text-orange-500 bg-white/10' : 'text-white hover:text-gray-200'
-                  } ${
-                    !isLastItem ? 'border-b border-white/30' : ''
-                  }`}
-                >
-                  {item}
-                </Link>
+                <div key={item}>
+                  <Link
+                    href={href}
+                    onClick={closeMobileMenu}
+                    className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 ${
+                      isActive ? 'text-orange-500 bg-white/10' : 'text-white hover:text-gray-200'
+                    } ${
+                      !isLastItem ? 'border-b border-white/30' : ''
+                    }`}
+                  >
+                    {item}
+                  </Link>
+                  {item === 'Newsletters' && (
+                    <div className="border-b border-white/30">
+                      <a
+                        href="https://www.jcssadvisory.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMobileMenu}
+                        className="block px-6 py-3 text-white hover:text-gray-200 transition-colors text-lg font-medium hover:bg-white/10"
+                      >
+                        JCSS Advisory
+                      </a>
+                      <a
+                        href="https://jcsslaw.com/home/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={closeMobileMenu}
+                        className="block px-6 py-3 text-white hover:text-gray-200 transition-colors text-lg font-medium hover:bg-white/10 border-b border-white/30"
+                      >
+                        JCSS Law
+                      </a>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </nav>
