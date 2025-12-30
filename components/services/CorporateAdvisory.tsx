@@ -92,7 +92,7 @@ export default function CorporateAdvisory({ currentScreen, onScreenChange }: Cor
       </div> 
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
+      <div className="relative z-10 h-full flex flex-col mt-6 justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
         <div className="text-right max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl w-full ml-auto">
           
           {/* Fixed Header Section - Title and Subtitle */}
@@ -104,21 +104,21 @@ export default function CorporateAdvisory({ currentScreen, onScreenChange }: Cor
             <div className="text-sm sm:text-base md:text-lg flex flex-wrap items-center justify-end gap-1 sm:gap-2">
               <button 
                 onClick={() => onScreenChange?.(1)}
-                className={`${currentScreen === 1 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer sm:cursor-default sm:hover:text-slate-400`}
+                className={`${currentScreen === 1 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer`}
               >
                 Business Modelling and Valuation
               </button>
               <span className="text-slate-500 inline">|</span>
               <button 
                 onClick={() => onScreenChange?.(2)}
-                className={`${currentScreen === 2 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer sm:cursor-default sm:hover:text-slate-400`}
+                className={`${currentScreen === 2 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer`}
               >
                 Due Diligence
               </button>
               <span className="text-slate-500 inline">|</span>
               <button 
                 onClick={() => onScreenChange?.(3)}
-                className={`${currentScreen === 3 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer sm:cursor-default sm:hover:text-slate-400`}
+                className={`${currentScreen === 3 ? 'text-orange-400 font-semibold' : 'text-orange-200'} hover:text-orange-300 transition-colors duration-200 cursor-pointer`}
               >
                 Structuring & Restructuring
               </button>

@@ -95,6 +95,22 @@ export const teamMembers = [
   },
   {
     id: 7,
+    name: "M SUBASH",
+    image: "/images/team/23 M SUBASH.jpg",
+    position: "Fractional CFO",
+    description: "Fellow Chartered Accountant and Cost and Management Accountant with over 35 years of experience across different industries ranging from manufacturing and IT Hardware to IT Services across India and Malaysia. Involved in Business Transformation, Risk Management, and Regulatory Leadership. Most notably, served as a Board Member at Dell India for over a decade, driving decision-making at the highest levels.",
+    specializations: [
+      "Fractional CFO Services",
+      "Business Transformation",
+      "Risk Management",
+      "Regulatory Leadership",
+      "Financial Management"
+    ],
+    academic: ["FCA", "CMA"],
+    linkedin: "https://www.linkedin.com/in/m-subash-blr/"
+  },
+  {
+    id: 8,
     name: "VINUTA U V",
     image: "/images/team/07 VINUTA U V.png",
     position: "Senior Associate",
@@ -108,7 +124,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/vinuta-uv"
   },
   {
-    id: 8,
+    id: 9,
     name: "PRASHANTH PRABHU G",
     image: "/images/team/08 PRASHANTH PRABHU G.png",
     position: "Associate Manager",
@@ -123,7 +139,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/prashanth-prabhu"
   },
   {
-    id: 9,
+    id: 10,
     name: "V.S.HARISH",
     image: "/images/team/09 V.S.HARISH.png",
     position: "Senior Associate",
@@ -137,7 +153,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/vs-harish"
   },
   {
-    id: 10,
+    id: 11,
     name: "NIRNAJAN N K",
     image: "/images/team/10 NIRANJAN NK.png",
     position: "Associate",
@@ -150,7 +166,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/niranjan-nk"
   },
   // {
-  //   id: 11,
+  //   id: 12,
   //   name: "NAGARAJA K S",
   //   image: "/images/team/11 NAGARAJA K S.png",
   //   position: "Senior Associate",
@@ -165,7 +181,7 @@ export const teamMembers = [
   //   linkedin: "https://linkedin.com/in/nagaraja-ks"
   // },
   {
-    id: 12,
+    id: 13,
     name: "MADHUSOODHAN HEGDE",
     image: "/images/team/12 MADHUSOODAN HEGDE.png",
     position: "Manager",
@@ -178,7 +194,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/madhusoodan-hegde"
   },
   {
-    id: 13,
+    id: 14,
     name: "SURESH K G",
     image: "/images/team/13 SURESH K G.png",
     position: "Senior Associate",
@@ -192,7 +208,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/suresh-kg"
   },
   {
-    id: 14,
+    id: 15,
     name: "LOGANATHAN ANANDAN",
     image: "/images/team/14 LOGANATHAN ANANDAN.png",
     position: "Associate",
@@ -207,7 +223,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/loganathan-anandan"
   },
   {
-    id: 15,
+    id: 16,
     name: "YASHVANT NIJAGAL",
     image: "/images/team/15 YASHVANT NIJAGAL.png",
     position: "Senior Associate",
@@ -221,7 +237,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/yashvant-nijagal"
   },
   {
-    id: 16,
+    id: 17,
     name: "KIRAN KUMAR",
     image: "/images/team/16 KIRAN KUMAR.png",
     position: "Associate",
@@ -237,7 +253,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/kiran-kumar"
   },
   {
-    id: 17,
+    id: 18,
     name: "SUBHASH MEHTA",
     image: "/images/team/17 SUBHASH MEHTA.png",
     position: "Manager",
@@ -254,7 +270,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/subhash-mehta"
   },
   {
-    id: 18,
+    id: 19,
     name: "PADIKKAL VEETTIL RAJESH",
     image: "/images/team/18 PADIKKAL VEETTIL RAJESH.png",
     position: "Senior Associate",
@@ -272,7 +288,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/padikkal-veettil-rajesh"
   },
   {
-    id: 19,
+    id: 20,
     name: "MANEESH AGARWAL",
     image: "/images/team/19 MANEESH AGARWAL.png",
     position: "Associate Manager",
@@ -288,7 +304,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/maneesh-agarwal"
   },
   {
-    id: 20,
+    id: 21,
     name: "VIJAYACHANDRA SHETTY",
     image: "/images/team/20 VIJAYACHANDRA SHETTY.png",
     position: "Senior Associate",
@@ -303,7 +319,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/vijayachandra-shetty"
   },
   {
-    id: 21,
+    id: 22,
     name: "SATYAJIT JOSHI",
     image: "/images/team/21 SATYAJIT JOSHI.png",
     position: "Associate",
@@ -318,7 +334,7 @@ export const teamMembers = [
     linkedin: "https://linkedin.com/in/satyajit-joshi"
   },
   {
-    id: 22,
+    id: 23,
     name: "SHAILESH BAPAT",
     image: "/images/team/22 SHAILESH BAPAT.png",
     position: "Senior Manager",

@@ -5,6 +5,7 @@ import { IconCalendar, IconArrowLeft, IconFileText } from '@tabler/icons-react';
 import Link from 'next/link';
 import { november2025Newsletter } from '@/components/Newsletters/november2025';
 import { october2025Newsletter } from '@/components/Newsletters/october2025';
+import { december2025Newsletter } from '@/components/Newsletters/december2025';
 
 interface ContentItem {
   heading: string;
@@ -28,6 +29,7 @@ interface NewsletterDetailProps {
 }
 
 const newsletterData: Record<string, Newsletter> = {
+  'december-2025': december2025Newsletter,
   'november-2025': november2025Newsletter,
   'october-2025': october2025Newsletter,
 };

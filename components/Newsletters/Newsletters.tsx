@@ -38,6 +38,48 @@ const generateNewslettersFromData = () => {
   const newsletters: Newsletter[] = [
     {
       id: "1",
+      title: "Newsletter 2025 - December",
+      date: "December 2025",
+      description:
+        "Our comprehensive December 2025 year-end newsletter featuring exceptional achievements, strategic milestones, client success stories, and our vision for 2026. This edition celebrates record-breaking performance, innovative solutions, and our commitment to delivering transparency and excellence across all service verticals.",
+      fileName: "Newsletter December 2025.docx",
+      fileUrl: "/Newsletter December 2025.docx",
+      highlights: [
+        "Record-breaking year-end performance with 180+ projects completed",
+        "99.2% client satisfaction rating - our highest achievement",
+        "Expansion to 3 new international markets",
+        "Launch of 5 innovative digital compliance solutions",
+      ],
+      keyMetrics: [
+        { label: "Projects Completed", value: "180+" },
+        { label: "Client Satisfaction", value: "99.2%" },
+        { label: "Team Growth", value: "40%" },
+        { label: "New Markets", value: "3" },
+      ],
+      content: [
+        {
+          title: "Executive Summary",
+          type: "text",
+          content:
+            "December 2025 marks the culmination of an exceptional year for JCSS, characterized by unprecedented growth, strategic innovations, and outstanding client success stories. Our commitment to delivering transparency and excellence has driven remarkable results across all service verticals.",
+        },
+        {
+          title: "Key Achievements",
+          type: "list",
+          content: "This year brought several transformative milestones:",
+          items: [
+            "Successfully completed 180+ client projects throughout 2025",
+            "Achieved 99.2% client satisfaction rating - our highest ever",
+            "Expanded operations to 3 new international markets",
+            "Launched 5 innovative digital compliance solutions",
+            "Established 25+ strategic partnerships globally",
+            "Grew our team by 40% with industry-leading professionals",
+          ],
+        },
+      ],
+    },
+    {
+      id: "2",
       title: "Newsletter 2025 - November",
       date: "November 2025",
       description:
@@ -78,7 +120,7 @@ const generateNewslettersFromData = () => {
       ],
     },
     {
-      id: "2",
+      id: "3",
       title: "Newsletter 2025 - October",
       date: "October 2025",
       description:

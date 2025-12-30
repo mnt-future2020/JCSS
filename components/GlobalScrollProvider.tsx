@@ -31,7 +31,7 @@ interface PageConfig {
 
 const PAGE_CONFIGS: PageConfig[] = [
   { path: '/', name: 'Home', screens: 4 },
-  { path: '/services', name: 'Services', screens: 5 }, // Will handle service switching internally
+  { path: '/services', name: 'Services', screens: 6 }, // Updated to 6 services: Advisory, Assurance, Support, Tax, Legal, FractionalCFO
   { path: '/crew', name: 'Crew', screens: 1 },
   { path: '/life', name: 'Life', screens: 1 },
   { path: '/experience', name: 'Experience', screens: 1 },
@@ -41,7 +41,7 @@ const PAGE_CONFIGS: PageConfig[] = [
 ];
 
 // Pages that should handle their own scrolling
-const SCROLLABLE_PAGES = ['/crew', '/experience', '/endorsement'];
+const SCROLLABLE_PAGES = ['/crew', '/experience', '/endorsement','/contact-us'];
 
 interface GlobalScrollProviderProps {
   children: ReactNode;

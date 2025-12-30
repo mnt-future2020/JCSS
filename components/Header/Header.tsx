@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { IconChevronDown, IconX } from '@tabler/icons-react';
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { IconChevronDown, IconX } from "@tabler/icons-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,24 +12,42 @@ export default function Header() {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isTaxDropdownOpen, setIsTaxDropdownOpen] = useState(false);
   const pathname = usePathname();
-  const navItems = ['Home', 'Services', 'Crew', 'Life', 'Experience', 'Endorsement', 'Newsletters', 'Contact Us'];
-  
-  const serviceItems = [
-    'Advisory',
-    'Support',
-    'Assurance',
-    'Tax ',
-    'Legal',
+  const navItems = [
+    "Home",
+    "Services",
+    "Crew",
+    "Life",
+    "Experience",
+    "Endorsement",
+    "Newsletters",
+    "Contact Us",
+    "JCSS Advisory",
+    "JCSS Law",
   ];
 
-  const taxServices = [
-    'Direct Tax',
-    'Indirect Tax'
+  const serviceItems = [
+    "Advisory",
+    "Support",
+    "Assurance",
+    "Tax ",
+    "Legal",
+    "Fractional CFO",
   ];
+
+  const taxServices = ["Direct Tax", "Indirect Tax"];
 
   // Pages that should always have the dark background
-  const darkBackgroundPages = ['/case-studies', '/testimonials', '/experience', '/endorsement', '/newsletters', '/contact-us'];
-  const shouldHaveDarkBackground = darkBackgroundPages.includes(pathname) || pathname.startsWith('/newsletters/');
+  const darkBackgroundPages = [
+    "/case-studies",
+    "/testimonials",
+    "/experience",
+    "/endorsement",
+    "/newsletters",
+    "/contact-us",
+  ];
+  const shouldHaveDarkBackground =
+    darkBackgroundPages.includes(pathname) ||
+    pathname.startsWith("/newsletters/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,22 +55,26 @@ export default function Header() {
       setIsScrolled(scrollTop > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (isMobileMenuOpen && !target.closest('.mobile-menu') && !target.closest('.mobile-menu-button')) {
+      if (
+        isMobileMenuOpen &&
+        !target.closest(".mobile-menu") &&
+        !target.closest(".mobile-menu-button")
+      ) {
         setIsMobileMenuOpen(false);
         setIsServicesDropdownOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = () => {
@@ -76,10 +98,20 @@ export default function Header() {
     setIsTaxDropdownOpen(false);
   };
 
+  /*
+   * HEADER LAYOUT STRUCTURE:
+   * - DESKTOP VIEW (hidden xl:flex): Horizontal navigation bar with Services dropdown & external links
+   * - MOBILE VIEW (xl:hidden): Hamburger menu button + Sidebar overlay with collapsible navigation
+   * Responsive breakpoint: xl = 1280px. Uses Tailwind's conditional rendering for each view.
+   */
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      shouldHaveDarkBackground || isScrolled ? 'bg-[#042d4d] shadow-lg' : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 md:right-13 z-50 transition-all duration-300 ${
+        shouldHaveDarkBackground || isScrolled
+          ? "bg-[#042d4d] shadow-lg"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo - Left Corner */}
         <div className="logo-container flex flex-col items-end">
@@ -98,45 +130,77 @@ export default function Header() {
         {/* Right Side Container - Navigation */}
         <div className="flex items-center gap-8">
           {/* Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden xl:flex items-center space-x-6">
             {navItems.map((item, index) => {
-              const isHome = item === 'Home';
-              const isServices = item === 'Services';
-              const getHref = (itemName: string) => {
-                if (itemName === 'Crew') return '/crew';
-                if (itemName === 'Life') return '/life';
-                if (itemName === 'Experience') return '/experience';
-                if (itemName === 'Endorsement') return '/endorsement';
-                return `/${itemName.toLowerCase().replace(' ', '-')}`;
-              };
-              const href = isHome ? '/' : isServices ? '/services' : getHref(item);
-              const isActive = pathname === href;
+              const isHome = item === "Home";
+              const isServices = item === "Services";
+              const isExternalLink = item === "JCSS Advisory" || item === "JCSS Law";
               
+              const getHref = (itemName: string) => {
+                if (itemName === "Crew") return "/crew";
+                if (itemName === "Life") return "/life";
+                if (itemName === "Experience") return "/experience";
+                if (itemName === "Endorsement") return "/endorsement";
+                if (itemName === "JCSS Advisory") return "https://www.jcssadvisory.com/";
+                if (itemName === "JCSS Law") return "https://jcsslaw.com/home/";
+                return `/${itemName.toLowerCase().replace(" ", "-")}`;
+              };
+              const href = isHome
+                ? "/"
+                : isServices
+                ? "/services"
+                : getHref(item);
+              const isActive = pathname === href;
+
               return (
-                <Link
-                  key={item}
-                  href={href}
-                  className={`nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 ${
-                    isActive ? 'text-orange-500' : 'text-white'
-                  }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {item}
-                </Link>
+                <div key={item} className="flex items-center gap-6">
+                  {isExternalLink ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 bg-white/30 border-2 border-white p-2 text-white
+                       rounded-full"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {item}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      className={`nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 ${
+                        isActive ? "text-orange-500" : "text-white"
+                      }`}
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {item}
+                    </Link>
+                  )}
+                </div>
               );
             })}
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden text-white mobile-menu-button z-50 relative"
+          <button
+            className="xl:hidden text-white mobile-menu-button z-50 relative"
             onClick={toggleMobileMenu}
           >
             {isMobileMenuOpen ? (
               <IconX className="w-6 h-6" />
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             )}
           </button>
@@ -144,16 +208,25 @@ export default function Header() {
       </div>
 
       {/* Mobile Sidebar Menu */}
-      <div className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
-        isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-      }`}>
+      <div
+        className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+          isMobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
         {/* Backdrop */}
-        <div className="absolute inset-0 bg-black/50" onClick={closeMobileMenu}></div>
-        
+        <div
+          className="absolute inset-0 bg-black/50"
+          onClick={closeMobileMenu}
+        ></div>
+
         {/* Sidebar */}
-        <div className={`mobile-menu absolute right-0 top-0 h-full w-80 bg-orange-400 shadow-2xl transform transition-transform duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
+        <div
+          className={`mobile-menu absolute right-0 top-0 h-full w-80 bg-orange-400 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
           {/* Sidebar Header */}
           <div className="flex items-center justify-between bg-[#042d4d] p-6 border-b border-white/30">
             <Image
@@ -163,69 +236,91 @@ export default function Header() {
               height={60}
               className="w-auto h-10 rounded-sm"
             />
-            <button 
-              onClick={closeMobileMenu}
-              className="text-white hover:text-gray-200 transition-colors"
-            >
-              <IconX className="w-6 h-6" />
-            </button>
           </div>
 
           {/* Navigation Menu */}
           <nav className="py-6">
             {navItems.map((item, index) => {
-              const isHome = item === 'Home';
-              const isServices = item === 'Services';
-              const getHref = (itemName: string) => {
-                if (itemName === 'Crew') return '/crew';
-                if (itemName === 'Life') return '/life';
-                if (itemName === 'Experience') return '/experience';
-                if (itemName === 'Endorsement') return '/endorsement';
-                return `/${itemName.toLowerCase().replace(' ', '-')}`;
-              };
-              const href = isHome ? '/' : isServices ? '/services' : getHref(item);
-              const isLastItem = index === navItems.length - 1;
+              const isHome = item === "Home";
+              const isServices = item === "Services";
+              const isExternalLink = item === "JCSS Advisory" || item === "JCSS Law";
               
+              const getHref = (itemName: string) => {
+                if (itemName === "Crew") return "/crew";
+                if (itemName === "Life") return "/life";
+                if (itemName === "Experience") return "/experience";
+                if (itemName === "Endorsement") return "/endorsement";
+                if (itemName === "JCSS Advisory") return "https://www.jcssadvisory.com/";
+                if (itemName === "JCSS Law") return "https://jcsslaw.com/home/";
+                return `/${itemName.toLowerCase().replace(" ", "-")}`;
+              };
+              const href = isHome
+                ? "/"
+                : isServices
+                ? "/services"
+                : getHref(item);
+              const isLastItem = index === navItems.length - 1;
+
               if (isServices) {
                 return (
-                  <div key={item} className={`px-6 ${!isLastItem ? 'border-b border-white/30' : ''}`}>
+                  <div
+                    key={item}
+                    className={`px-6 ${
+                      !isLastItem ? "border-b border-white/30" : ""
+                    }`}
+                  >
                     <button
                       onClick={toggleServicesDropdown}
                       className="w-full flex items-center justify-between py-3 text-white hover:text-gray-200 transition-colors text-lg font-medium"
                     >
                       <span>Services</span>
-                      <IconChevronDown 
+                      <IconChevronDown
                         className={`w-5 h-5 transition-transform duration-200 ${
-                          isServicesDropdownOpen ? 'rotate-180' : ''
-                        }`} 
+                          isServicesDropdownOpen ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
-                    
+
                     {/* Services Dropdown */}
-                    <div className={`overflow-hidden transition-all duration-300 ${
-                      isServicesDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        isServicesDropdownOpen
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
                       <div className="pl-4 py-2 space-y-2">
                         {serviceItems.map((service, serviceIndex) => {
-                          if (service === 'Tax Services') {
+                          if (service === "Tax Services") {
                             return (
-                              <div key={service} className={`${serviceIndex !== serviceItems.length - 1 ? 'border-b border-white/20 pb-2' : ''}`}>
+                              <div
+                                key={service}
+                                className={`${
+                                  serviceIndex !== serviceItems.length - 1
+                                    ? "border-b border-white/20 pb-2"
+                                    : ""
+                                }`}
+                              >
                                 <button
                                   onClick={toggleTaxDropdown}
                                   className="w-full flex items-center justify-between py-2 text-white hover:text-gray-200 transition-colors text-base"
                                 >
                                   <span>{service}</span>
-                                  <IconChevronDown 
+                                  <IconChevronDown
                                     className={`w-4 h-4 transition-transform duration-200 ${
-                                      isTaxDropdownOpen ? 'rotate-180' : ''
-                                    }`} 
+                                      isTaxDropdownOpen ? "rotate-180" : ""
+                                    }`}
                                   />
                                 </button>
-                                
+
                                 {/* Tax Services Sub-dropdown */}
-                                <div className={`overflow-hidden transition-all duration-300 ${
-                                  isTaxDropdownOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'
-                                }`}>
+                                <div
+                                  className={`overflow-hidden transition-all duration-300 ${
+                                    isTaxDropdownOpen
+                                      ? "max-h-32 opacity-100"
+                                      : "max-h-0 opacity-0"
+                                  }`}
+                                >
                                   <div className="pl-4 py-1 space-y-1">
                                     {taxServices.map((taxService, taxIndex) => (
                                       <Link
@@ -233,7 +328,9 @@ export default function Header() {
                                         href="/services?service=Tax"
                                         onClick={closeMobileMenu}
                                         className={`block py-1 text-white/80 hover:text-white transition-colors text-sm ${
-                                          taxIndex !== taxServices.length - 1 ? 'border-b border-white/10 pb-1' : ''
+                                          taxIndex !== taxServices.length - 1
+                                            ? "border-b border-white/10 pb-1"
+                                            : ""
                                         }`}
                                       >
                                         {taxService}
@@ -244,30 +341,34 @@ export default function Header() {
                               </div>
                             );
                           }
-                          
+
                           // Map service names to URL parameters
                           const getServiceParam = (serviceName: string) => {
                             switch (serviceName) {
-                              case 'Audit & Assurance':
-                                return 'Assurance';
-                              case 'Corporate Advisory':
-                                return 'Advisory';
-                              case 'Legal Services':
-                                return 'Legal';
-                              case 'Enterprise Support':
-                                return 'Support';
+                              case "Audit & Assurance":
+                                return "Assurance";
+                              case "Corporate Advisory":
+                                return "Advisory";
+                              case "Legal Services":
+                                return "Legal";
+                              case "Enterprise Support":
+                                return "Support";
                               default:
                                 return serviceName;
                             }
                           };
-                          
+
                           return (
                             <Link
                               key={service}
-                              href={`/services?service=${getServiceParam(service)}`}
+                              href={`/services?service=${getServiceParam(
+                                service
+                              )}`}
                               onClick={closeMobileMenu}
                               className={`block py-2 text-white hover:text-gray-200 transition-colors text-base ${
-                                serviceIndex !== serviceItems.length - 1 ? 'border-b border-white/20 pb-2' : ''
+                                serviceIndex !== serviceItems.length - 1
+                                  ? "border-b border-white/20 pb-2"
+                                  : ""
                               }`}
                             >
                               {service}
@@ -279,26 +380,40 @@ export default function Header() {
                   </div>
                 );
               }
-              
+
               const isActive = pathname === href;
-              
+
               return (
-                <Link
-                  key={item}
-                  href={href}
-                  onClick={closeMobileMenu}
-                  className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 ${
-                    isActive ? 'text-orange-500 bg-white/10' : 'text-white hover:text-gray-200'
-                  } ${
-                    !isLastItem ? 'border-b border-white/30' : ''
-                  }`}
-                >
-                  {item}
-                </Link>
+                <div key={item}>
+                  {isExternalLink ? (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMobileMenu}
+                      className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 text-white hover:text-gray-200 ${
+                        !isLastItem ? "border-b border-white/30" : ""
+                      }`}
+                    >
+                      {item}
+                    </a>
+                  ) : (
+                    <Link
+                      href={href}
+                      onClick={closeMobileMenu}
+                      className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 ${
+                        isActive
+                          ? "text-orange-500 bg-white/10"
+                          : "text-white hover:text-gray-200"
+                      } ${!isLastItem ? "border-b border-white/30" : ""}`}
+                    >
+                      {item}
+                    </Link>
+                  )}
+                </div>
               );
             })}
           </nav>
-
         </div>
       </div>
     </header>

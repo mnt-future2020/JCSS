@@ -7,7 +7,7 @@ import AuditAssurance from '@/components/services/AuditAssurance';
 import EnterpriseSupport from '@/components/services/EnterpriseSupport';
 import Tax from '@/components/services/Tax';
 import Legal from '@/components/services/Legal';
-import ContactUs from '@/components/Contact/ContactUs';
+import FractionalCFO from '@/components/services/FractionalCFO';
 import Header from '@/components/Header/Header';
 import Navigation from '@/components/Header/Navigation';
 import { useGlobalScroll } from '@/components/GlobalScrollProvider';
@@ -17,19 +17,21 @@ function ServicesContent() {
   const { currentScreen, setCurrentScreen, isTransitioning } = useGlobalScroll();
   const [isMobile, setIsMobile] = useState(false);
   const [mobileScreen, setMobileScreen] = useState(0);
+  const [desktopSubScreen, setDesktopSubScreen] = useState(0);
   
   const servicesRef = useRef<HTMLDivElement>(null);
 
-  // Service order for the 5 screens
+  // Service order for the 6 screens
   const serviceOrder = [
     'Advisory',
     'Assurance', 
     'Support',
     'Tax',
-    'Legal'
+    'Legal',
+    'FractionalCFO'
   ];
 
-  // Get current service based on current screen (0-4)
+  // Get current service based on current screen (0-5)
   const activeService = serviceOrder[currentScreen] || 'Advisory';
 
   // Check if device is mobile
@@ -58,9 +60,19 @@ function ServicesContent() {
     setMobileScreen(screen);
   };
 
+  // Handle desktop sub-screen changes
+  const handleDesktopSubScreenChange = (screen: number) => {
+    setDesktopSubScreen(screen);
+  };
+
   // Reset mobile screens when service changes
   useEffect(() => {
     setMobileScreen(0);
+  }, [activeService]);
+
+  // Reset desktop sub-screens when service changes
+  useEffect(() => {
+    setDesktopSubScreen(0);
   }, [activeService]);
 
   if (isMobile) {
@@ -135,6 +147,12 @@ function ServicesContent() {
               onScreenChange={handleMobileScreenChange}
             />
           )}
+          {activeService === 'FractionalCFO' && (
+            <FractionalCFO 
+              currentScreen={mobileScreen} 
+              onScreenChange={handleMobileScreenChange}
+            />
+          )}
         </div>
 
         {/* Mobile Floating Action Button */}
@@ -166,32 +184,38 @@ function ServicesContent() {
         <main className="relative">
           {activeService === 'Advisory' && (
             <CorporateAdvisory 
-              currentScreen={0} 
-              onScreenChange={() => {}}
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
             />
           )}
           {activeService === 'Assurance' && (
             <AuditAssurance 
-              currentScreen={0} 
-              onScreenChange={() => {}}
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
             />
           )}
           {activeService === 'Support' && (
             <EnterpriseSupport 
-              currentScreen={0} 
-              onScreenChange={() => {}}
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
             />
           )}
           {activeService === 'Tax' && (
             <Tax 
-              currentScreen={0} 
-              onScreenChange={() => {}}
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
             />
           )}
           {activeService === 'Legal' && (
             <Legal 
-              currentScreen={0} 
-              onScreenChange={() => {}}
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
+            />
+          )}
+          {activeService === 'FractionalCFO' && (
+            <FractionalCFO 
+              currentScreen={desktopSubScreen} 
+              onScreenChange={handleDesktopSubScreenChange}
             />
           )}
         </main>

@@ -77,7 +77,7 @@ export default function Legal({ currentScreen, onScreenChange }: LegalProps) {
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
+      <div className="relative z-10 h-full flex flex-col mt-6 justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
         <div className="text-right max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl w-full ml-auto">
           
           {/* Fixed Header Section - Title and Subtitle */}

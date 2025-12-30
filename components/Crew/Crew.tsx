@@ -10,6 +10,7 @@ import { teamMembers } from './teamData';
 
 const Crew: React.FC = () => {
   const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<number>>(new Set());
 
   const handleCardClick = (memberId: number) => {
     setFlippedCards(prev => {
@@ -23,6 +24,28 @@ const Crew: React.FC = () => {
     });
   };
 
+  const toggleDescriptionExpand = (memberId: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedDescriptions(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(memberId)) {
+        newSet.delete(memberId);
+      } else {
+        newSet.add(memberId);
+      }
+      return newSet;
+    });
+  };
+
+  const countLines = (text: string): number => {
+    return text.split('\n').length;
+  };
+
+  const shouldTruncate = (text: string): boolean => {
+    // Show "See More" if text is longer than ~3-4 lines (300 chars)
+    return text.length > 250;
+  };
+
   return (
     <div className="min-h-screen bg-black text-white pt-28 pb-16 crew-section" style={{ backgroundColor: '#000000' }}>
       <div className="w-full bg-black crew-section" style={{ backgroundColor: '#000000' }}>
@@ -30,10 +53,11 @@ const Crew: React.FC = () => {
           
           {/* Crew Grid - Responsive Layout */}
           <div className="grid gap-6 
-            grid-cols-2 
-            sm:grid-cols-3 
-            lg:grid-cols-4 
-            xl:grid-cols-5 
+            grid-cols-1 
+            sm:grid-cols-2 
+            lg:grid-cols-3 
+            xl:grid-cols-4
+            2xl:grid-cols-5 
             auto-rows-fr
             place-items-center
             w-full
@@ -110,10 +134,20 @@ const Crew: React.FC = () => {
                         <div className="border-t border-gray-200 mb-2"></div>
 
                         {/* Description */}
-                        <div className="mb-2">
-                          <p className="text-gray-600 text-sm leading-relaxed ">
+                        <div className="mb-1">
+                          <p className={`text-gray-600 text-sm leading-relaxed ${
+                            !expandedDescriptions.has(member.id) ? 'line-clamp-6' : ''
+                          }`}>
                             {member.description}
                           </p>
+                          {shouldTruncate(member.description) && (
+                            <button
+                              onClick={(e) => toggleDescriptionExpand(member.id, e)}
+                              className="text-orange-500 hover:text-orange-600 text-xs font-semibold mt-2 transition-colors"
+                            >
+                              {expandedDescriptions.has(member.id) ? 'See Less' : 'See More'}
+                            </button>
+                          )}
                         </div>
 
                         {/* Divider */}
@@ -136,7 +170,7 @@ const Crew: React.FC = () => {
                         <div className="border-t border-gray-200 mb-1"></div>
 
                         {/* Academic */}
-                        <div className="mb-6">
+                        <div className="pb-5">
                           <h4 className="font-bold text-base text-gray-900">Academic:</h4>
                           <div className="text-gray-600 text-xs">
                             {member.academic.join(', ')}

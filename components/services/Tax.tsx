@@ -169,7 +169,7 @@ export default function Tax({ currentScreen, onScreenChange }: TaxProps) {
       </div>
 
       {/* Content Container - Responsive */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
+      <div className="relative z-10 h-full flex flex-col mt-6 justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-32">
         <div className="text-left max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl xl:max-w-7xl w-full">
           
           {/* Fixed Header Section - Title and Subtitle */}
@@ -263,7 +263,7 @@ export default function Tax({ currentScreen, onScreenChange }: TaxProps) {
           </div>
 
           {/* Dynamic Content Area - Fixed Height with Scroll */}
-          <div className="h-72 sm:h-80 md:h-96 overflow-y-auto service-content-scroll">
+          <div className="h-72 sm:h-80 md:h-[120px] overflow-y-auto mt-5 sm:mt-0 service-content-scroll">
             <div 
               key={currentScreen}
               className="space-y-4 sm:space-y-6 text-white animate-fade-in-up pr-2"

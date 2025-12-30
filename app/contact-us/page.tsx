@@ -9,10 +9,10 @@ export default function ContactUsPage() {
   const { currentScreen } = useGlobalScroll();
   
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Navigation />
       <ContactUs />
-    </>
+    </div>
   );
 }

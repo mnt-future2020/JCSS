@@ -10,6 +10,7 @@ const serviceItems = [
   'Support',
   'Tax',
   'Legal',
+  'FractionalCFO',
   'Contact Us'
 ];
 
@@ -20,6 +21,7 @@ const servicePageMap: { [key: string]: string } = {
   'Support': '/services?service=Support',
   'Tax': '/services?service=Tax',
   'Legal': '/services?service=Legal',
+  'FractionalCFO': '/services?service=FractionalCFO',
   'Contact Us': '/contact-us'
 };
 
@@ -30,6 +32,7 @@ const serviceSectionMap: { [key: string]: string } = {
   'Support': 'support-section',
   'Tax': 'tax-section',
   'Legal': 'legal-section',
+  'FractionalCFO': 'fractional-cfo-section',
   'Contact Us': 'contact-section'
 };
 
@@ -164,28 +167,29 @@ function NavigationContent({ activeService, onServiceChange }: NavigationProps) 
   return (
     <>
       {/* Desktop & Laptop - Right Side Vertical Service Menu */}
-      <div className="hidden md:flex fixed right-3 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1">
+      <div className="hidden md:flex fixed right-2 md:right-3 lg:right-4 xl:right-5 top-0 min-h-screen z-40 flex-col justify-center space-y-1 md:space-y-1.5 lg:space-y-2">
         {serviceItems.map((service, index) => {
           const isActive = currentActiveService === service;
           return (
             <button
               key={service}
               onClick={() => handleServiceClick(service)}
-              className={`service-tab group relative text-white py-4 xl:py-6 px-2 xl:px-2.5 text-xs xl:text-sm rounded-r-2xl font-medium transition-all duration-500 hover:px-2.5 xl:hover:px-3.5 ${
+              className={`service-tab group relative text-white py-2 md:py-2.5 lg:py-3 xl:py-4 px-1.5 md:px-2 lg:px-2.5 xl:px-3 text-xs md:text-xs lg:text-sm rounded-r-xl md:rounded-r-xl lg:rounded-r-2xl font-medium transition-all duration-500 hover:px-2 md:hover:px-2.5 lg:hover:px-3 xl:hover:px-3.5 ${
                 isActive 
-                  ? 'bg-orange-500 hover:bg-orange-600 px-2.5 xl:px-3.5 shadow-lg shadow-orange-500/30' 
+                  ? 'bg-orange-500 hover:bg-orange-600 px-2 md:px-2.5 lg:px-3 xl:px-3.5 shadow-lg shadow-orange-500/30' 
                   : 'bg-slate-700/80 hover:bg-slate-600'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
+              title={service}
             >
-              <span className={`block writing-mode-vertical transform transition-all duration-300 group-hover:scale-105 tracking-wide ${
+              <span className={`block writing-mode-vertical transform transition-all duration-300 group-hover:scale-105 tracking-tight md:tracking-wide ${
                 isActive ? 'scale-105 font-semibold' : ''
               }`}>
                 {service}
               </span>
               {/* Active indicator */}
               {isActive && (
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-white rounded-r-full animate-pulse"></div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-4 md:h-5 lg:h-6 bg-white rounded-r-full animate-pulse"></div>
               )}
             </button>
           );
