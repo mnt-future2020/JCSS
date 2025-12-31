@@ -89,8 +89,10 @@ const Crew: React.FC = () => {
                           src={member.image}
                           alt={member.name}
                           fill
+                          unoptimized
                           className="object-cover crew-image grayscale group-hover:opacity-0 transition-opacity duration-500"
                         />
+
                         {/* Color Image - On Hover */}
                         <Image
                           src={member.image}
