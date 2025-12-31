@@ -48,6 +48,7 @@ export default function Experience() {
           fill
           className="object-cover"
           priority
+          unoptimized
         />
         {/* Dark Overlay for better text readability */}
         {/* <div className="absolute inset-0 bg-black/40"></div> */}
