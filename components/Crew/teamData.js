@@ -96,7 +96,7 @@ export const teamMembers = [
   {
     id: 7,
     name: "M SUBASH",
-    image: "/images/team/23 M SUBASH.jpg",
+    image: "/images/team/SUBASH.jpg",
     position: "Fractional CFO",
     description: "Fellow Chartered Accountant and Cost and Management Accountant with over 35 years of experience across different industries ranging from manufacturing and IT Hardware to IT Services across India and Malaysia. Involved in Business Transformation, Risk Management, and Regulatory Leadership. Most notably, served as a Board Member at Dell India for over a decade, driving decision-making at the highest levels.",
     specializations: [
