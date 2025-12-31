@@ -2,7 +2,6 @@
 
 import Header from '@/components/Header/Header';
 import Crew from '@/components/Crew/Crew';
-<<<<<<< HEAD
 import ScrollablePageProvider, { useScrollablePage } from '@/components/ScrollablePageProvider';
 import { useState, useEffect } from 'react';
 
@@ -47,14 +46,11 @@ function CrewContent() {
     </div>
   );
 }
-=======
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
 
 export default function CrewPage() {
   return (
-    <div className="min-h-screen">
-    <Header />
-    <Crew />
-    </div>
+    <ScrollablePageProvider>
+      <CrewContent />
+    </ScrollablePageProvider>
   );
 }

@@ -12,7 +12,6 @@ export default function Header() {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isTaxDropdownOpen, setIsTaxDropdownOpen] = useState(false);
   const pathname = usePathname();
-<<<<<<< HEAD
   const navItems = [
     "Home",
     "Services",
@@ -24,17 +23,6 @@ export default function Header() {
     "Contact Us",
     "JCSS Advisory",
     "JCSS Law",
-=======
-  const navItems = ['Home', 'Services', 'Crew', 'Life', 'Experience', 'Endorsement', 'Newsletters', 'Contact Us'];
-  
-  const serviceItems = [
-    'Advisory',
-    'Support',
-    'Assurance',
-    'Tax ',
-    'Legal',
-    'Fractional CFO'
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
   ];
 
   const serviceItems = [
@@ -110,18 +98,13 @@ export default function Header() {
     setIsTaxDropdownOpen(false);
   };
 
-<<<<<<< HEAD
   /*
-=======
-  /* 
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
    * HEADER LAYOUT STRUCTURE:
    * - DESKTOP VIEW (hidden xl:flex): Horizontal navigation bar with Services dropdown & external links
    * - MOBILE VIEW (xl:hidden): Hamburger menu button + Sidebar overlay with collapsible navigation
    * Responsive breakpoint: xl = 1280px. Uses Tailwind's conditional rendering for each view.
    */
   return (
-<<<<<<< HEAD
     <header
       className={`fixed top-0 left-0 right-0 md:right-13 z-50 transition-all duration-300 ${
         shouldHaveDarkBackground || isScrolled
@@ -129,11 +112,6 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-=======
-    <header className={`fixed top-0 left-0 right-13 z-50 transition-all duration-300 ${
-      shouldHaveDarkBackground || isScrolled ? 'bg-[#042d4d] shadow-lg' : 'bg-transparent'
-    }`}>
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo - Left Corner */}
         <div className="logo-container flex flex-col items-end">
@@ -176,7 +154,6 @@ export default function Header() {
 
               return (
                 <div key={item} className="flex items-center gap-6">
-<<<<<<< HEAD
                   {isExternalLink ? (
                     <a
                       href={href}
@@ -198,39 +175,6 @@ export default function Header() {
                     >
                       {item}
                     </Link>
-=======
-                  <Link
-                    href={href}
-                    className={`nav-item relative text-lg font-medium transition-all duration-300 hover:text-orange-500 ${
-                      isActive ? 'text-orange-500' : 'text-white'
-                    }`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {item}
-                  </Link>
-                  {item === 'Newsletters' && (
-                    <>
-                      <span className="text-white/30">|</span>
-                      <a
-                        href="https://www.jcssadvisory.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white text-lg font-medium hover:text-orange-500 transition-colors"
-                      >
-                        JCSS Advisory
-                      </a>
-                       <span className="text-white/30">|</span>
-                      <a
-                        href="https://jcsslaw.com/home/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white text-lg font-medium hover:text-orange-500 transition-colors"
-                      >
-                        JCSS Law
-                      </a>
-                      <span className="text-white/30">|</span>
-                    </>
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
                   )}
                 </div>
               );
@@ -238,11 +182,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-<<<<<<< HEAD
           <button
-=======
-          <button 
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
             className="xl:hidden text-white mobile-menu-button z-50 relative"
             onClick={toggleMobileMenu}
           >
@@ -268,7 +208,6 @@ export default function Header() {
       </div>
 
       {/* Mobile Sidebar Menu */}
-<<<<<<< HEAD
       <div
         className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
           isMobileMenuOpen
@@ -276,11 +215,6 @@ export default function Header() {
             : "opacity-0 pointer-events-none"
         }`}
       >
-=======
-      <div className={`xl:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
-        isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-      }`}>
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
         {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/50"
@@ -302,10 +236,6 @@ export default function Header() {
               height={60}
               className="w-auto h-10 rounded-sm"
             />
-<<<<<<< HEAD
-=======
-        
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
           </div>
 
           {/* Navigation Menu */}
@@ -455,7 +385,6 @@ export default function Header() {
 
               return (
                 <div key={item}>
-<<<<<<< HEAD
                   {isExternalLink ? (
                     <a
                       href={href}
@@ -480,40 +409,6 @@ export default function Header() {
                     >
                       {item}
                     </Link>
-=======
-                  <Link
-                    href={href}
-                    onClick={closeMobileMenu}
-                    className={`block px-6 py-3 transition-colors text-lg font-medium hover:bg-white/10 ${
-                      isActive ? 'text-orange-500 bg-white/10' : 'text-white hover:text-gray-200'
-                    } ${
-                      !isLastItem ? 'border-b border-white/30' : ''
-                    }`}
-                  >
-                    {item}
-                  </Link>
-                  {item === 'Newsletters' && (
-                    <div className="border-b border-white/30">
-                      <a
-                        href="https://www.jcssadvisory.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={closeMobileMenu}
-                        className="block px-6 py-3 text-white hover:text-gray-200 transition-colors text-lg font-medium hover:bg-white/10"
-                      >
-                        JCSS Advisory
-                      </a>
-                      <a
-                        href="https://jcsslaw.com/home/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={closeMobileMenu}
-                        className="block px-6 py-3 text-white hover:text-gray-200 transition-colors text-lg font-medium hover:bg-white/10 border-b border-white/30"
-                      >
-                        JCSS Law
-                      </a>
-                    </div>
->>>>>>> a4c793e79a70ddaa45a74b0ec60349d87ee22279
                   )}
                 </div>
               );
