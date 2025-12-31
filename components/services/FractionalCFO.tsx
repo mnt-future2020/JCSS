@@ -98,6 +98,7 @@ export default function FractionalCFO({ currentScreen, onScreenChange }: Fractio
           fill
           className="object-cover"
           priority
+          unoptimized
         />
       </div>
 

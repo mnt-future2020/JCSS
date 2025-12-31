@@ -99,6 +99,7 @@ const Crew: React.FC = () => {
                           alt={member.name}
                           fill
                           className="object-cover crew-image opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0"
+                          unoptimized
                         />
                       </div>
                       {/* Name Label */}
