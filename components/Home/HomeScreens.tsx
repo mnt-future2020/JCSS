@@ -121,6 +121,11 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
       {/* Desktop Layout */}
       <div className="hidden sm:block">
         <section className="fixed inset-0 h-screen w-screen overflow-hidden">
+          
+          {/* ========================================================================== */}
+          {/* ========================= SHARED BACKGROUND SECTION ==================== */}
+          {/* ========================================================================== */}
+          
           {/* Background Image with Animation */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div
@@ -146,7 +151,19 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
             <div className="absolute inset-0 bg-black/50 z-10"></div>
           </div>
 
-          {/* ==================== SCREEN 2 - Let's Talk Button (Left Side) - Desktop Only ==================== */}
+          {/* ========================================================================== */}
+          {/* ========================= SCREEN 1 SECTION ============================= */}
+          {/* ========================= Welcome Introduction ========================== */}
+          {/* ========================================================================== */}
+          
+          {/* Screen 1: No specific elements - uses shared content container only */}
+
+          {/* ========================================================================== */}
+          {/* ========================= SCREEN 2 SECTION ============================= */}
+          {/* ========================= Welcome with Left Button ===================== */}
+          {/* ========================================================================== */}
+          
+          {/* Screen 2 - Let's Talk Button (Left Side) */}
           {currentScreen === 1 && (
             <div className="fixed left-0 top-1/2 -translate-y-1/2 z-30 opacity-100 translate-x-0 transition-all duration-1000 ease-in-out">
               <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-8 rounded-r-full font-normal text-xl shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3">
@@ -156,37 +173,48 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
             </div>
           )}
 
+          {/* ========================================================================== */}
+          {/* ========================= SHARED CONTENT SECTION ======================= */}
+          {/* ========================= Logo & Dynamic Text =========================== */}
+          {/* ========================================================================== */}
+          
           {/* Content Container */}
-          <div className="relative z-10 h-full flex items-center justify-end pr-8 lg:pr-16">
-            <div className="text-right max-w-4xl flex flex-col justify-center min-h-[60vh] w-full">
-              {/* Logo - SVG */}
-              <div className="mb-12 animate-fade-in flex flex-col items-end">
+          <div className="relative z-10 h-screen flex items-center justify-end pr-8 lg:pr-16">
+            <div className="text-right max-w-4xl flex flex-col justify-center w-full">
+              
+              {/* Logo - SVG (Shared across all screens) */}
+              <div className="mb-8 animate-fade-in flex flex-col items-end">
                 <div className="mb-4 pr-2">
                   <Image
                     src="/svg/logo.svg"
                     alt="JCSS Logo"
-                    width={400}
-                    height={200}
-                    className="w-auto h-32 md:h-32 rounded-sm"
+                    width={360}
+                    height={180}
+                    className="w-auto h-28 md:h-28 rounded-sm"
                     priority
                   />
                 </div>
               </div>
 
-              {/* Dynamic Content */}
+              {/* Dynamic Content (Shared across all screens) */}
               <div 
                 key={currentScreen}
-                className="text-slate-200 animate-fade-in-up relative grow pr-2"
+                className="text-slate-200 animate-fade-in-up relative pr-2"
               >
                 <p className="text-base leading-relaxed">
                   <span className="font-semibold text-white">{currentScreenData.heading}</span>{' '}
                   {currentScreenData.subheading}
                 </p>
 
-                {/* ==================== SCREEN 3 - Timeline Section ==================== */}
+                {/* ========================================================================== */}
+                {/* ========================= SCREEN 3 SECTION ============================= */}
+                {/* ========================= Our Journey with Timeline ==================== */}
+                {/* ========================================================================== */}
+                
+                {/* Screen 3 - Timeline Section */}
                 {currentScreenData.showTimeline && (
-                  <div className="relative mt-12 pt-8 animate-fade-in-up animation-delay-200 mb-12 w-full max-w-6xl">
-                    <div className="relative px-8 py-6">
+                  <div className="relative mt-4 pt-8 animate-fade-in-up animation-delay-200 mb-12 w-full max-w-7xl">
+                    <div className="relative px-6 py-6 max-w-5xl mr-10">
                       {/* Main dotted line */}
                       <div className="absolute top-1/2 transform translate-y-1/2 left-12 right-12 h-0.5" 
                            style={{
@@ -227,7 +255,7 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
                             
                             {/* Hover Tooltip - Bottom positioned */}
                             {hoveredYear === item.year && (
-                              <div className="absolute top-full mt-6 left-1/2 transform -translate-x-1/2 w-72 bg-slate-800/95 backdrop-blur-sm border border-orange-500/30 rounded-lg p-4 shadow-2xl animate-fade-in-up z-50">
+                              <div className="absolute top-full mt-6 left-1/2 transform -translate-x-1/2 w-56 bg-slate-800/95 backdrop-blur-sm border border-orange-500/30 rounded-lg p-4 shadow-2xl animate-fade-in-up z-50">
                                 <div className="text-center">
                                   <h4 className="text-orange-400 font-bold text-base mb-2">{item.title}</h4>
                                   <p className="text-slate-200 text-sm leading-relaxed">{item.description}</p>
@@ -243,12 +271,15 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
                   </div>
                 )}
               </div>
-
-
             </div>
           </div>
 
-          {/* ==================== SCREEN 3 & 4 - Let's Talk Button (Fixed Bottom Right Corner) ==================== */}
+          {/* ========================================================================== */}
+          {/* ========================= SCREEN 3 & 4 SECTION ========================= */}
+          {/* ========================= Bottom Right Button =========================== */}
+          {/* ========================================================================== */}
+          
+          {/* Screen 3 & 4 - Let's Talk Button (Fixed Bottom Right Corner) */}
           {(currentScreen === 2 || currentScreen === 3) && (
             <div 
               className="fixed bottom-8 right-20 z-50 animate-fade-in-up animation-delay-500"
@@ -276,6 +307,14 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
               </button>
             </div>
           )}
+
+          {/* ========================================================================== */}
+          {/* ========================= SCREEN 4 SECTION ============================= */}
+          {/* ========================= Our Promise ================================== */}
+          {/* ========================================================================== */}
+          
+          {/* Screen 4: No specific elements - uses shared content container and bottom right button */}
+
         </section>
       </div>
     </>

@@ -2,6 +2,39 @@ export const december2025Newsletter = {
   title: "JCSS NEWSLETTER 2025 – December",
   date: "December 2025",
   sections: {
+    incomeTax: {
+      title: "INCOME TAX",
+      content: [
+        {
+          heading: "CASE LAW",
+          subheading: "Valuation of Unquoted Equity Shares – DCF Method",
+          content: `• The assessee, a private limited company, filed its income tax return for AY 2015–16. It had issued equity shares at face value along with a share premium. The value of the shares was determined using the Discounted Cash Flow (DCF) method, supported by a valuation report from a qualified accountant. The case was selected for scrutiny, and the Assessing Officer (AO) completed the assessment under Section 143(3), accepting the returned income.
+
+• Later, the Principal Commissioner invoked Section 263, stating that the assessment was erroneous and prejudicial to the interests of the Revenue, and directed the AO to pass a fresh assessment order.
+
+• In the consequential assessment under Section 143(3) read with Section 263, the AO rejected the DCF valuation. The AO held that the DCF method was based on actual future performance rather than reasonable projections available on the valuation date and claimed that the NAV method was more appropriate.
+
+• The assessee appealed before the Tribunal. The Tribunal held that:
+• The assessee had rightly chosen the DCF method, which is a prescribed and accepted valuation method.
+• The choice of valuation method cannot be questioned by the AO once it is permitted under law.
+• The AO was wrong in comparing DCF projections with actual future revenues and profits.
+• Accordingly, the Tribunal held that the AO had wrongly rejected the DCF method. The order of the Commissioner (Appeals) / NFAC was upheld, and the addition made under Section 56(2)(viib) was deleted.`
+        },
+        {
+          heading: "International Transaction & Transfer Pricing – Software & ITeS (Private Ltd. Co.)",
+          subheading: "",
+          content: `• The assessee, a private limited company, provided software development and ITeS services to its Associated Enterprise (AE) and applied the Transactional Net Margin Method (TNMM) for transfer pricing, claiming arm's length pricing.
+
+• The TPO rejected the assessee's TP study, conducted fresh benchmarking, and determined higher ALPs for both segments. Receivables outstanding beyond 30 days were treated as loans, and notional interest at 13.62% (SBI PLR) was imputed.
+
+• The DRP deleted the TP adjustments for software and ITeS services but directed interest on outstanding receivables at LIBOR plus 350 bps, citing LIBOR as a standard benchmark for cross-border financing. The assessee contested the upward ALP adjustments, the classification of receivables as loans, and the notional interest, arguing that the granted credit period was reasonable and already reflected in operating margins.
+
+• The Tribunal held that LIBOR was an inappropriate benchmark, and the DRP's rate was ad hoc.
+• It observed that outstanding receivables constitute short-term inter-company financing, and interest should reflect invoice currency and associated risk.
+• The matter was remanded to the AO to benchmark receivables based on invoice currency and examine working capital adjustments for the software and ITeS segments.`
+        }
+      ]
+    },
     indirectTax: {
       title: "INDIRECT TAX",
       content: [

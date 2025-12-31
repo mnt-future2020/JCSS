@@ -59,6 +59,28 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check for custom header background from CSS custom property
+  const [customHeaderBg, setCustomHeaderBg] = useState<string | null>(null);
+  
+  useEffect(() => {
+    const checkCustomBg = () => {
+      const crewHeaderBg = getComputedStyle(document.documentElement).getPropertyValue('--crew-header-bg').trim();
+      setCustomHeaderBg(crewHeaderBg || null);
+    };
+
+    // Check initially
+    checkCustomBg();
+
+    // Set up a MutationObserver to watch for style changes
+    const observer = new MutationObserver(checkCustomBg);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['style']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -106,11 +128,11 @@ export default function Header() {
    */
   return (
     <header
-      className={`fixed top-0 left-0 right-0 md:right-13 z-50 transition-all duration-300 ${
-        shouldHaveDarkBackground || isScrolled
-          ? "bg-[#042d4d] shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 md:right-13 z-50 transition-all duration-300`}
+      style={{
+        backgroundColor: customHeaderBg || (shouldHaveDarkBackground || isScrolled ? '#042d4d' : 'transparent'),
+        boxShadow: (customHeaderBg && customHeaderBg !== 'transparent') || shouldHaveDarkBackground || isScrolled ? '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' : 'none'
+      }}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo - Left Corner */}
