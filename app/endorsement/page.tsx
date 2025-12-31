@@ -6,7 +6,7 @@ import { useGlobalScroll } from "@/components/GlobalScrollProvider";
 import ScrollablePageProvider, {
   useScrollablePage,
 } from "@/components/ScrollablePageProvider";
-
+import Navigation from '@/components/Header/Navigation';
 function EndorsementContent() {
   const { containerRef, handleScroll } = useScrollablePage();
 
@@ -16,6 +16,7 @@ function EndorsementContent() {
       className="h-screen flex flex-col bg-[#1d4e77] overflow-y-auto"
       onScroll={handleScroll}
     >
+      <Navigation />
       <Header />
       <Endorsement />
     </div>

@@ -4,7 +4,7 @@ import Header from '@/components/Header/Header';
 import Crew from '@/components/Crew/Crew';
 import ScrollablePageProvider, { useScrollablePage } from '@/components/ScrollablePageProvider';
 import { useState, useEffect } from 'react';
-
+import Navigation from '@/components/Header/Navigation';
 function CrewContent() {
   const { containerRef, handleScroll } = useScrollablePage();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,6 +41,7 @@ function CrewContent() {
       className="h-screen overflow-y-auto"
       onScroll={handleScrollWithHeaderUpdate}
     >
+      <Navigation />
       <Header />
       <Crew />
     </div>
