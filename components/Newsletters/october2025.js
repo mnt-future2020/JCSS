@@ -97,7 +97,7 @@ export const october2025Newsletter = {
 
    <p>The launch included unveiling of the GSTAT e-Courts Portal, enabling taxpayers and practitioners to file appeals online, track case progress, and participate in hearings through digital mode. </p>
 
-   <p><a href="https://efiling.gstat.gov.in">Website: https://efiling.gstat.gov.in</a></p>
+  <a href="https://efiling.gstat.gov.in">Website: https://efiling.gstat.gov.in</a>
 
    <h3>Timeline for Filing Appeals Before GSTAT:</h3>
 
@@ -258,7 +258,7 @@ The Guidelines apply to all financial institutions and their appointed third par
 <dt>3. Advisory Letters to Content Creators</dt>
 <p>In a media release, MAS also announced that it will be issuing advisory letters to five content creators who may have provided financial advice without a licence. They have been advised to adjust their content and practices to be in line with MAS&#39; regulatory requirements. Persons who continue to provide financial advice without a licence will face enforcement action.</p>
 
-<p><a href="https://www.mas.gov.sg/news/media-releases/2025/initiatives-to-promote-responsible-online-financial-content">https://www.mas.gov.sg/news/media-releases/2025/initiatives-to-promote-responsible-online-financial-content</a></p>
+<a href="https://www.mas.gov.sg/news/media-releases/2025/initiatives-to-promote-responsible-online-financial-content">https://www.mas.gov.sg/news/media-releases/2025/initiatives-to-promote-responsible-online-financial-content</a>
   `
 };
 

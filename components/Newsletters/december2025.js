@@ -2,9 +2,9 @@ export const december2025Newsletter = {
   title: "JCSS NEWSLETTER 2025 – December",
   date: "December 2025",
   content: `
-    <h2>INCOME TAX</h2>
+    <h2>INDIRECT TAX</h2>
     <h3>CASE LAW</h3>
-<h3>Valuation of Unquoted Equity Shares – DCF Method</h3>
+<h4>Valuation of Unquoted Equity Shares – DCF Method</h4>
 <ul>
 <li>The assessee, a private limited company, filed its income tax return for AY 2015–16. It had issued equity shares at face value along with a share premium. The value of the shares was determined using the Discounted Cash Flow (DCF) method, supported by a valuation report from a qualified accountant. The case was selected for scrutiny, and the Assessing Officer (AO) completed the assessment under Section 143(3), accepting the returned income.</li>
 <li>Later, the Principal Commissioner invoked Section 263, stating that the assessment was erroneous and prejudicial to the interests of the Revenue, and directed the AO to pass a fresh assessment order.</li>
@@ -28,7 +28,7 @@ export const december2025Newsletter = {
 
 <h2>GST UPDATE</h2>
 
-<h3>Gujarat AAR – IGST paid basis pre-notice consultation letter not eligible for ITC</h3>
+<h4>Gujarat AAR – IGST paid basis pre-notice consultation letter not eligible for ITC</h4>
 
 <p>The Gujarat Authority for Advance Ruling in Hansaben Jayantibhai Patel addressed whether ITC could be availed on differential IGST paid pursuant to pre-notice consultation letter issued under Section 28(1) of Customs Act, 1962.</p>
 
@@ -36,7 +36,7 @@ export const december2025Newsletter = {
 
 <p>The AAR further clarified that challans are also not prescribed documents for availing ITC, citing Board Circular No. 16/2023-Customs which explicitly clarified this position under GST law. Since the fundamental eligibility for ITC was denied, the AAR held that the question of applicability of time limit prescribed under Section 16(4) did not arise and was consequently not answered.</p>
 
-<h3>Gauhati High Court - Section 16(2)(aa) read down to protect bona fide purchasers</h3>
+<h4>Gauhati High Court - Section 16(2)(aa) read down to protect bona fide purchasers</h4>
 
 <p>The Gauhati High Court in M/s McLeod Russel India Limited addressed the constitutional validity of Section 16(2)(aa) of CGST Act, which makes ITC availability to recipients contingent on suppliers furnishing invoice details in GSTR-1 returns. The petitioner challenged this provision as arbitrary and unconstitutional, arguing it restricts vested rights of bona fide recipients due to supplier defaults beyond their control.</p>
 
@@ -64,7 +64,7 @@ Since the GST rate on all tea products including premix tea is 5%, the AAR clari
 
 <p>The Court held that in the instant case, the location of the suppliers and the place of supply of goods were within the then State of Jammu Kashmir, which is now a Union Territory. Therefore, applying the statutory definition of intra-State supply, the cross-LoC trade affected by the petitioners during the tax period in question was nothing but an intra-State trade and therefore liable to GST. </p>
 
-<h3>Bombay High Court - SEZ Units entitled to ITC refund following Gujarat HC precedent</h3>
+<h4>Bombay High Court - SEZ Units entitled to ITC refund following Gujarat HC precedent</h4>
 
 <p>The Bombay High Court in M/s Lupin Limited, Nagpur addressed whether SEZ units can claim refund of unutilized Input Tax Credit under GST law. The respondent authorities had rejected refund applications on grounds that only suppliers of goods or services can file refund claims, not recipient-SEZ units.</p>
 
@@ -90,7 +90,7 @@ Since the GST rate on all tea products including premix tea is 5%, the AAR clari
 
 <p>Accordingly, the summons, show-cause notices, and orders issued against the petitioners under Rule 96(10) of the CGST Rules were quashed.</p>
 
-<h5>Gujarat High Court - software consultancy to parent company is not “intermediary” services</h5>
+<h4>Gujarat High Court - software consultancy to parent company is not “intermediary” services</h4>
 
 <p>The Gujarat High Court in M/s Infodesk India Pvt Limited addressed the classification of services provided by the petitioner to its parent company under a service agreement. The petitioner provides software consultancy services to its parent company and filed a refund application for input tax credit availed on inputs and input services used in providing such services, claiming it as &#39;export of service&#39; under Section 2(6) of the IGST Act, 2017. The refund application was rejected on the ground that the services provided were in the nature of &#39;intermediary services&#39; under Section 2(13) of the IGST Act and not &#39;export of services&#39;. The issue was whether the services should be considered as &#39;export of services&#39; or &#39;intermediary services&#39;.</p>
 
@@ -130,7 +130,7 @@ Since the GST rate on all tea products including premix tea is 5%, the AAR clari
 
 <h2>Service Tax</h2>  
 
-<h3>Chandigarh Tribunal - revenue sharing arrangements not taxable as Business Support Services</h3>
+<h4>Chandigarh Tribunal - revenue sharing arrangements not taxable as Business Support Services</h4>
 
 <p>The Chandigarh Tribunal in M/s NC Jindal Institute of Medical Care & Research addressed whether revenue sharing arrangements between a hospital and diagnostic service providers (DSPs) constitute taxable Business Support Services.  </p>
 
@@ -162,7 +162,7 @@ Since the GST rate on all tea products including premix tea is 5%, the AAR clari
 
 <p>Accordingly, the Tribunal held that the imported goods are properly classifiable under CTH 8471 as "Automatic Data Processing Machines" and are entitled to the NIL duty benefit claimed by the appellant. The impugned order reclassifying the goods and imposing differential duty, interest, and penalties was set aside, and the appeal was allowed in favor of the appellant.</p>
 
-<h3>DGFT Policy Circular No. 8/2025-26 - Import Management System for IT Hardware (Calendar Year 2026)</h3>
+<h4>DGFT Policy Circular No. 8/2025-26 - Import Management System for IT Hardware (Calendar Year 2026)</h4>
 
 <p>Background: Import of certain IT Hardware items (Laptops, Tablets, All-in-one PCs, Ultra small form factor computers, and Servers under HSN 8471) remains under &#39;Restricted&#39; category, as per earlier notifications from August and October 2023.</p>
 
@@ -193,7 +193,7 @@ Review Mechanism: </dd>
 
 <p>ACRA states that since high quality audits are essential for fostering confidence and trust in financial markets, audit committees should engage external auditors early in the audit process to ensure accounting issues are addressed appropriately to comply with the accounting standards.</p>
 
-<p><a href="https://www.acra.gov.sg/docs/default-source/default-document-library/how-to-guides/preparing-financial-statements/practice-guidance-1-of-2025.pdf?sfvrsn=dd32c2a9_1">https://www.acra.gov.sg/docs/default-source/default-document-library/how-to-guides/preparing-financial-statements/practice-guidance-1-of-2025.pdf?sfvrsn=dd32c2a9_1</a></p>
+<a href="https://www.acra.gov.sg/docs/default-source/default-document-library/how-to-guides/preparing-financial-statements/practice-guidance-1-of-2025.pdf?sfvrsn=dd32c2a9_1">https://www.acra.gov.sg/docs/default-source/default-document-library/how-to-guides/preparing-financial-statements/practice-guidance-1-of-2025.pdf?sfvrsn=dd32c2a9_1</a>
 
 <h3>Corporate and Accounting Laws (Amendment) Bill</h3>
 
@@ -210,7 +210,7 @@ Review Mechanism: </dd>
 <li>Strengthening the Regulatory Framework: Penalties are increased for directors who fail in their duty to manage the company in its best interests.</li>
 <li>Reducing Regulatory Burden: The requirement for a company&#39;s registered office to be open for public inspection has been removed; companies only need to make records available for inspection for a minimum of two hours during business days upon reasonable notice.</li>
 </ul>
-<p>https://www.parliament.gov.sg/docs/default-source/bills-introduced/corporate-and-accounting-laws-(amendment)-bill-13-2025.pdf?sfvrsn=6a255d08_1</p>
+<a href="https://www.parliament.gov.sg/docs/default-source/bills-introduced/corporate-and-accounting-laws-(amendment)-bill-13-2025.pdf?sfvrsn=6a255d08_1">https://www.parliament.gov.sg/docs/default-source/bills-introduced/corporate-and-accounting-laws-(amendment)-bill-13-2025.pdf?sfvrsn=6a255d08_1</a>
 
 <h3>Monetary Authority of Singapore</h3>
 
@@ -232,7 +232,7 @@ Review Mechanism: </dd>
 
 <p>The initiative aims to enable financial institutions to innovate responsibly while managing AI-related risks effectively.</p>
 
-<p>https://www.mas.gov.sg/news/media-releases/2025/mas-guidelines-for-artificial-intelligence-risk-management</p>
+<a href="https://www.mas.gov.sg/news/media-releases/2025/mas-guidelines-for-artificial-intelligence-risk-management">https://www.mas.gov.sg/news/media-releases/2025/mas-guidelines-for-artificial-intelligence-risk-management</a>
 
 <h3>MAS Proposes to Consolidate Listing Review Functions under SGX RegCo to Streamline the Listing Process</h3>
 
@@ -253,7 +253,7 @@ Review Mechanism: </dd>
 <li>Disclosure-Based Regime: The changes align Singapore with other major developed markets by advancing a more disclosure-based regulatory regime, focusing on issuers providing material information to investors rather than a prescriptive, merit-based approach.</li>
 </ul>
 
-<p><a href="https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions">https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions</a></p>
+<a href="https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions">https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions</a>
 
 <h2>IS AUDIT UPDATES</h2>
 

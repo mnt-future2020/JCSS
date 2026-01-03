@@ -228,7 +228,7 @@ Since appellants received payments in convertible foreign exchange for services 
 
 <p>BLOOM also builds on Project Orchid, an MAS-led initiative that began in 2021 to explore the potential of a digital Singapore dollar. Insights from more than 10 trials under Project Orchid have already been translated into commercial solutions by participating institutions.</p>
 
-<p><a href="https://www.mas.gov.sg/news/media-releases/2025/mas-launches-bloom-initiative-to-extend-settlement-capabilities">https://www.mas.gov.sg/news/media-releases/2025/mas-launches-bloom-initiative-to-extend-settlement-capabilities</a></p>
+<a href="https://www.mas.gov.sg/news/media-releases/2025/mas-launches-bloom-initiative-to-extend-settlement-capabilities">https://www.mas.gov.sg/news/media-releases/2025/mas-launches-bloom-initiative-to-extend-settlement-capabilities</a>
 
 <h4>MAS Proposes to Consolidate Listing Review Functions under SGX RegCo to Streamline the Listing Process</h4>
 
@@ -238,7 +238,7 @@ Since appellants received payments in convertible foreign exchange for services 
 
 <p>The consolidation of listing review functions under SGX RegCo will provide prospective issuers with greater certainty on the listing process and timeline. Going forward, they will only have to engage with SGX RegCo. Currently, issuers engage with MAS to review their prospectus, and with SGX RegCo on their suitability to list SGX RegCo will continue to focus on admitting quality issuers and ensuring that issuers disclose relevant and material information to support informed decision-making. MAS will continue to work with SGX RegCo to ensure timely and robust market surveillance and enforcement, as well as investigate and take action against breaches of prospectus disclosure requirements under the Securities and Futures Act.</p>
 
-<p><a href="https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions">https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions</a></p>
+<a href="https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions">https://www.mas.gov.sg/news/media-releases/2025/mas-proposes-to-consolidate-listing-review-functions</a>
 
 <h3>Inland Revenue Authority of Singapore</h3>
 <h4>GST and BCRS Deposit</h4>
@@ -253,7 +253,7 @@ Since appellants received payments in convertible foreign exchange for services 
 
 <p>The guidance specifically discusses rules concerning invoicing, credit notes, rules concerning the completion of GST returns, and price display requirements.</p>
 
-<p><a href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/gst-and-bcrs-deposit">https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/gst-and-bcrs-deposit</a></p>
+<a href="https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/gst-and-bcrs-deposit">https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/gst-and-bcrs-deposit</a>
 
 <h2>IS AUDIT UPDATES</h2>
 
