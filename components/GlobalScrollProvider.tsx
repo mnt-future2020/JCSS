@@ -165,6 +165,13 @@ export default function GlobalScrollProvider({
     const scrollDelay = 1000;
 
     const handleWheel = (e: WheelEvent) => {
+      // Check if scroll is inside chat widget or any scrollable container
+      const target = e.target as HTMLElement;
+      const isInsideChatWidget = target.closest('[class*="jcss-chat"], [id*="jcss-chat"], iframe, [class*="chat"], [data-chat-widget]');
+      
+      // Don't prevent default if scrolling inside chat widget
+      if (isInsideChatWidget) return;
+
       e.preventDefault();
 
       const now = Date.now();

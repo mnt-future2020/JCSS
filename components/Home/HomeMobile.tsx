@@ -63,7 +63,7 @@ export default function HomeMobile() {
           </div>
 
           {/* Let's Talk Button */}
-          <div className="fixed bottom-8 right-8 z-30">
+          {/* <div className="fixed bottom-8 right-8 z-30">
             <button className="bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-2xl transition-all duration-500 hover:scale-110 flex items-center justify-center w-16 h-16 animate-bounce-slow hover:animate-pulse transform-gpu">
               <div className="flex flex-col items-center transition-all duration-300">
                 <svg
@@ -84,7 +84,7 @@ export default function HomeMobile() {
                 </span>
               </div>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
