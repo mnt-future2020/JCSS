@@ -2,7 +2,7 @@ export const december2025Newsletter = {
   title: "JCSS NEWSLETTER 2025 – December",
   date: "December 2025",
   content: `
-    <h2>INDIRECT TAX</h2>
+    <h2>DIRECT TAX</h2>
     <h3>CASE LAW</h3>
 <h4>Valuation of Unquoted Equity Shares – DCF Method</h4>
 <ul>

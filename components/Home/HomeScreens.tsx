@@ -183,7 +183,7 @@ export default function HomeScreens({ currentScreen }: HomeScreensProps) {
           {/* ========================================================================== */}
 
           {/* Content Container */}
-          <div className="relative z-10 h-screen flex items-center justify-end pr-8 lg:pr-16">
+          <div className="relative z-10 h-screen flex items-center justify-end pr-8 sm:pr-24 lg:pr-32">
             <div className="text-right max-w-4xl flex flex-col justify-center w-full">
               {/* Logo - SVG (Shared across all screens) */}
               <div className="mb-8 animate-fade-in flex flex-col items-end">
