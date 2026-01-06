@@ -2,16 +2,22 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { useGlobalScroll } from './GlobalScrollProvider';
 
 export default function ChatPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const pathname = usePathname();
+  const { currentScreen } = useGlobalScroll();
   const isHomePage = pathname === '/';
+  
+  // Show popup on home page only for screens 3 and 4 (index 2 and 3)
+  const shouldShowOnHome = isHomePage && (currentScreen === 2 || currentScreen === 3);
+  const shouldShowPopup = !isHomePage || shouldShowOnHome;
 
   useEffect(() => {
-    // Don't show popup on home page
-    if (isHomePage) {
+    // Don't show popup if not allowed
+    if (!shouldShowPopup) {
       setIsVisible(false);
       return;
     }
@@ -24,14 +30,14 @@ export default function ChatPopup() {
     }, 3000);
 
     return () => clearTimeout(showTimer);
-  }, [isDismissed, isHomePage]);
+  }, [isDismissed, shouldShowPopup]);
 
   const handleDismiss = () => {
     setIsVisible(false);
     setIsDismissed(true);
   };
 
-  if (!isVisible || isHomePage) return null;
+  if (!isVisible || !shouldShowPopup) return null;
 
   return (
     <div className="fixed bottom-28 right-6 z-[9999] animate-fade-in-up">

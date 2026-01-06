@@ -71,9 +71,11 @@ export default function RootLayout({
           src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
-        <GlobalScrollProvider>{children}</GlobalScrollProvider>
-        <ChatWidget />
-        <ChatPopup />
+        <GlobalScrollProvider>
+          {children}
+          <ChatWidget />
+          <ChatPopup />
+        </GlobalScrollProvider>
       </body>
     </html>
   );
