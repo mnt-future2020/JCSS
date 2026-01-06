@@ -50,7 +50,7 @@ export default function ChatPopup() {
         
         {/* Message content */}
         <div className="text-gray-800">
-          <p className="font-semibold text-orange-500 mb-1">👋 Need help?</p>
+          <p className="font-semibold text-orange-500 mb-1">👋 Chat with Us</p>
           <p className="text-sm">Chat with us! We&apos;re here to answer your questions about our services.</p>
         </div>
       </div>
