@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import GlobalScrollProvider from "../components/GlobalScrollProvider";
 import ChatPopup from "../components/ChatPopup";
+import ChatWidget from "../components/ChatWidget";
 
 const barlow = Barlow({
   variable: "--font-barlow",
@@ -70,29 +71,8 @@ export default function RootLayout({
           src="https://www.google.com/recaptcha/api.js"
           strategy="lazyOnload"
         />
-        <Script
-          id="jcss-chat-widget"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var script = document.createElement('script');
-                script.src = 'https://jcss-chat.vercel.app/embed.js';
-                script.async = true;
-                script.onload = function() {
-                  if (window.JCSSChat) {
-                    window.JCSSChat.init({
-                      embedId: '768673a1-57de-474d-8097-c76c53830989',
-                      apiUrl: 'https://jcss-chat.vercel.app/api/chat'
-                    });
-                  }
-                };
-                document.head.appendChild(script);
-              })();
-            `,
-          }}
-        />
         <GlobalScrollProvider>{children}</GlobalScrollProvider>
+        <ChatWidget />
         <ChatPopup />
       </body>
     </html>

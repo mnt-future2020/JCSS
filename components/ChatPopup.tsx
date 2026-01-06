@@ -1,12 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function ChatPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
+    // Don't show popup on home page
+    if (isHomePage) {
+      setIsVisible(false);
+      return;
+    }
+
     // Show popup after 3 seconds
     const showTimer = setTimeout(() => {
       if (!isDismissed) {
@@ -15,14 +24,14 @@ export default function ChatPopup() {
     }, 3000);
 
     return () => clearTimeout(showTimer);
-  }, [isDismissed]);
+  }, [isDismissed, isHomePage]);
 
   const handleDismiss = () => {
     setIsVisible(false);
     setIsDismissed(true);
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || isHomePage) return null;
 
   return (
     <div className="fixed bottom-28 right-6 z-[9999] animate-fade-in-up">
