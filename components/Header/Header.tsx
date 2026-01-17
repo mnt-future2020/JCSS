@@ -18,7 +18,7 @@ export default function Header() {
     "Crew",
     "Life",
     "Experience",
-    "Endorsement",
+    // "Endorsement",
     "Newsletters",
     "Contact Us",
     "JCSS Advisory",
